@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 export interface iIngredient {
   id: string;
   name: string;
@@ -25,3 +26,11 @@ export interface iUser {
   avatar: string;
   recipes?: Array<iRecipe>;
 }
+
+export interface iMenuItem {
+  path: string;
+  label: string;
+  page: ReactElement;
+}
+
+export type aMenuItems = Array<iMenuItem>;
