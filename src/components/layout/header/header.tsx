@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-
+import './header.css';
 export function Header() {
   let template = (
     <>
@@ -9,7 +9,7 @@ export function Header() {
           <h3 className="subtitle">キッチン</h3>
         </hgroup>
         <h3 className="header__container__pages">
-          <Link to="/recipes">recetas</Link>
+          <Link to="/recipes">Recetas</Link>
         </h3>
         <h3 className="header__container__pages">
           <Link to="/perfil">Perfil</Link>

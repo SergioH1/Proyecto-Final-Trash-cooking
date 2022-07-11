@@ -1,3 +1,4 @@
+import './footer.css';
 export function Footer() {
   let template = (
     <footer className="footer__container">
