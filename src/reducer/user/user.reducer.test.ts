@@ -32,4 +32,22 @@ describe('Given reducer reciperReducer', () => {
       expect(newState).toEqual(mockedUser);
     });
   });
+  describe('When calling it with update action with a user or partial user', () => {
+    test('It should return a new state with a updated user', () => {
+      const newState = usersReducer(
+        mockedUser,
+        actions.updateUserAction({
+          ...mockedUser,
+          user: {
+            id: '',
+            userName: 'se',
+            email: '',
+            passwd: '1231',
+            avatar: '',
+          },
+        })
+      );
+      expect(newState.user.userName).toBe('se');
+    });
+  });
 });

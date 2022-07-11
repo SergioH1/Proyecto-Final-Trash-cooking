@@ -1,5 +1,9 @@
 export function LoginPage() {
-  let template = <></>;
+  let template = (
+    <>
+      <main className="container-main"></main>
+    </>
+  );
   return template;
 }
 export default LoginPage;
