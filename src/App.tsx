@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { Route, Routes } from 'react-router';
 import './App.css';
 
 import { aMenuItems } from './interfaces/interfaces';
 import { Layout } from './components/layout/layout';
 import { BrowserRouter } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { HttpRecipe } from './services/http.recipes';
+import { loadRecipesAction } from './reducer/recipe.action.creators';
+
 /* istanbul ignore file */
 function App() {
+  const dispatcher = useDispatch();
+  const apiRecipes = useMemo(() => new HttpRecipe(), []);
+  useEffect(() => {
+    apiRecipes.getAllRecipes().then((recipes) => {
+      dispatcher(loadRecipesAction);
+    });
+  }, [apiRecipes, dispatcher]);
   const HomePage = React.lazy(() => import('./pages/home'));
   const LoginPage = React.lazy(() => import('./pages/login'));
   const RegisterPage = React.lazy(() => import('./pages/register'));
