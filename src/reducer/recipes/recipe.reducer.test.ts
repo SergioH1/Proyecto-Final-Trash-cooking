@@ -35,9 +35,9 @@ const mockedArray: Array<iRecipe> = [
     keyword: ['gambas', 'arroz'],
   },
 ];
-describe('Given characters reducer', () => {
-  describe('When calling it with load action with an array of characters', () => {
-    test('It should return a new state with that array of characters', () => {
+describe('Given recipes reducer', () => {
+  describe('When calling it with load action with an array of recipes', () => {
+    test('It should return a new state with that array of recipes', () => {
       const newState = recipeReducer(
         [],
         actions.loadRecipesAction(mockedArray)
@@ -55,7 +55,7 @@ describe('Given characters reducer', () => {
     });
   });
   describe('When calling it with update action with a character or partial character', () => {
-    test('It should return a new state with a updated array of characters', () => {
+    test('It should return a new state with a updated array of recipes', () => {
       const newState = recipeReducer(
         mockedArray,
         actions.updateRecipeAction({
@@ -69,7 +69,7 @@ describe('Given characters reducer', () => {
     });
   });
   describe('When calling it with delete action with a character', () => {
-    test('It should return a new state with an array of previous characters without the deleted one', () => {
+    test('It should return a new state with an array of previous recipes without the deleted one', () => {
       const newState = recipeReducer(
         mockedArray,
         actions.deleteRecipeAction(mockedArray[0])

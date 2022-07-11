@@ -1,6 +1,6 @@
 import { Layout } from '../components/layout/layout';
 
-export function RecipePage() {
+export function ProfilePage() {
   let template = (
     <>
       <Layout>
@@ -10,4 +10,4 @@ export function RecipePage() {
   );
   return template;
 }
-export default RecipePage;
+export default ProfilePage;

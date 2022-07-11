@@ -1,21 +1,8 @@
 import { useSelector } from 'react-redux';
 import { iStore } from '../../app/store';
-import { useDispatch } from 'react-redux';
 
-import { useEffect, useMemo } from 'react';
-import { HttpRecipe } from '../../services/http.recipes';
-import { loadRecipesAction } from '../../reducer/recipes/recipe.action.creators';
 import './list.recipes.css';
 export function ListRecipes() {
-  const dispatcher = useDispatch();
-  const apiRecipes = useMemo(() => new HttpRecipe(), []);
-  useEffect(() => {
-    apiRecipes.getAllRecipes().then((recipes) => {
-      dispatcher(loadRecipesAction(recipes));
-      console.log(recipes);
-    });
-  }, [apiRecipes, dispatcher]);
-
   const recipes = useSelector((store: iStore) => store.recipes);
 
   let template = (

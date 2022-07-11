@@ -26,7 +26,10 @@ export interface iUser {
   avatar: string;
   recipes?: Array<iRecipe>;
 }
-
+export interface userWithToken {
+  token: string;
+  user: iUser;
+}
 export interface iMenuItem {
   path: string;
   label: string;
