@@ -1,7 +1,7 @@
 import { recipeReducer } from './recipes.reducer';
 import * as actions from './recipe.action.creators';
 import { AnyAction } from '@reduxjs/toolkit';
-import { iRecipe } from '../interfaces/interfaces';
+import { iRecipe } from '../../interfaces/interfaces';
 
 const mockedArray: Array<iRecipe> = [
   {

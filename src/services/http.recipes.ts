@@ -3,10 +3,10 @@ import { iFood, iIngredient, iRecipe } from '../interfaces/interfaces';
 export class HttpRecipe {
   url: string;
   constructor() {
-    this.url = 'http://localhost:3700/recipe';
+    this.url = 'http://localhost:3700/recipes';
   }
 
-  getAllRecipes(): Promise<iRecipe[]> {
+  getAllRecipes(): Promise<Array<iRecipe>> {
     return fetch(this.url).then((resp) => resp.json());
   }
 

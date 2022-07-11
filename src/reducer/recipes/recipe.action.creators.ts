@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-import { iRecipe } from '../interfaces/interfaces';
+import { iRecipe } from '../../interfaces/interfaces';
 import { actionTypesRecipes } from './recipe.action.types';
 
 export const loadRecipesAction = createAction<Array<iRecipe>>(

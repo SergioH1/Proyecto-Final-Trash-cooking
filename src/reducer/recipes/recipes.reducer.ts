@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { iRecipe } from '../interfaces/interfaces';
+import { iRecipe } from '../../interfaces/interfaces';
 import * as actions from './recipe.action.creators';
 
 const initialState = [] as Array<iRecipe>;
