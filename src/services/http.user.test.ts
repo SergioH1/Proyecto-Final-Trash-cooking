@@ -47,7 +47,7 @@ describe('Given the http.user', () => {
 
   describe('When i use the method loginUser', () => {
     test('Then should be render', async () => {
-      const user = { userName: 'test', passwd: '1234' };
+      const user = { userName: 'test', password: '1234' };
       global.fetch = jest.fn().mockResolvedValue({
         json: jest.fn().mockResolvedValue(user),
       });

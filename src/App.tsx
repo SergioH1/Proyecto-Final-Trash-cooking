@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router';
 import './App.css';
 
 import { aMenuItems } from './interfaces/interfaces';
-
+import { Layout } from './components/layout/layout';
 import { BrowserRouter } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
@@ -34,17 +34,19 @@ function App() {
   ];
   return (
     <BrowserRouter>
-      <React.Suspense>
-        <Routes>
-          {options.map((item) => (
-            <Route
-              key={item.label}
-              path={item.path}
-              element={item.page}
-            ></Route>
-          ))}
-        </Routes>
-      </React.Suspense>
+      <Layout>
+        <React.Suspense>
+          <Routes>
+            {options.map((item) => (
+              <Route
+                key={item.label}
+                path={item.path}
+                element={item.page}
+              ></Route>
+            ))}
+          </Routes>
+        </React.Suspense>
+      </Layout>
     </BrowserRouter>
   );
 }

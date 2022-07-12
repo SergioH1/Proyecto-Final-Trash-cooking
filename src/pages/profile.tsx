@@ -1,11 +1,7 @@
-import { Layout } from '../components/layout/layout';
-
 export function ProfilePage() {
   let template = (
     <>
-      <Layout>
-        <div></div>
-      </Layout>
+      <div></div>
     </>
   );
   return template;

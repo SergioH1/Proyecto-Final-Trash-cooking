@@ -7,7 +7,7 @@ const initialState: userWithToken = {
   user: {
     id: '',
     userName: '',
-    passwd: '',
+    password: '',
     avatar: '',
     email: '',
   },

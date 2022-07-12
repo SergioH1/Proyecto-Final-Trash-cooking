@@ -22,7 +22,7 @@ export interface iUser {
   id?: string;
   userName: string;
   email: string;
-  passwd: string;
+  password: string;
   avatar: string;
   recipes?: Array<iRecipe>;
 }
