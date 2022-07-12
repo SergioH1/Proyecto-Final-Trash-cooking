@@ -1,5 +1,3 @@
-import { Layout } from '../components/layout/layout';
-
 export function RecipePage() {
   let template = (
     <>
