@@ -1,10 +1,9 @@
 import { SyntheticEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { userWithToken } from '../../interfaces/interfaces';
+
 import { HttpUser } from '../../services/http.user';
-import * as ac from '../../reducer/user/user.action.creators';
-import { LocalStorage } from '../../services/Storage';
+
 import { loadUserAction } from '../../reducer/user/user.action.creators';
 
 export function FormLogin() {
