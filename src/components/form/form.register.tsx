@@ -4,9 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { userWithToken } from '../../interfaces/interfaces';
 import { HttpUser } from '../../services/http.user';
 import * as ac from '../../reducer/user/user.action.creators';
-
-
-export function FormLogin() {
+import './form.css';
+export function FormRegister() {
   let navigate = useNavigate();
   const api = new HttpUser();
   const dispatch = useDispatch();
@@ -45,8 +44,6 @@ export function FormLogin() {
           type="email"
           className="form__input"
           placeholder="Email"
-          aria-label="Email"
-          autoFocus
           required
           onChange={handleChange}
         />
@@ -57,13 +54,12 @@ export function FormLogin() {
           type="password"
           className="form__input"
           placeholder="Password"
-          aria-label="Password"
           required
           onChange={handleChange}
         />
         <label className="form_floating-label">Password</label>
       </div>
-      <button type="submit" className="form__submit">
+      <button type="submit" className="btn btn1">
         Crear mi usuario
       </button>
       <div className="form__hint">

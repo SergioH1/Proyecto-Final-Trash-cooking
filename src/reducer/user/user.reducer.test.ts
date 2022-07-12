@@ -1,5 +1,5 @@
 import { userWithToken } from '../../interfaces/interfaces';
-import { usersReducer } from './user.reduer';
+import { usersReducer } from './user.reducer';
 import * as actions from './user.action.creators';
 const mockedUser: userWithToken = {
   token: '123',
