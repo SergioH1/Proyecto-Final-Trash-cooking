@@ -23,7 +23,6 @@ export interface iUser {
   userName: string;
   email: string;
   password: string;
-  avatar: string;
   recipes?: Array<iRecipe>;
 }
 export interface userWithToken {

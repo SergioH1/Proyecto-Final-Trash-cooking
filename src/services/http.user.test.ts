@@ -8,8 +8,8 @@ describe('Given the http.user', () => {
         json: jest
           .fn()
           .mockResolvedValue([
-            new User('url', 'test', 'test@test.com', '1234', []),
-            new User('url', 'test2', 'test2@test.com', '1234', []),
+            new User('url', 'test', 'test@test.com', []),
+            new User('url', 'test2', 'test2@test.com', []),
           ]),
       });
       const result = await new HttpUser().getAllUsers();
@@ -21,7 +21,7 @@ describe('Given the http.user', () => {
 
   describe('When i use the method getUser', () => {
     test('Then should be render', async () => {
-      const user = new User('url', 'test', 'test@test.com', '1234', []);
+      const user = new User('url', 'test', 'test@test.com', []);
       global.fetch = jest.fn().mockResolvedValue({
         json: jest.fn().mockResolvedValue(user),
       });
@@ -34,7 +34,7 @@ describe('Given the http.user', () => {
 
   describe('When i use the method registerUser', () => {
     test('Then should be render', async () => {
-      const user = new User('url', 'test', 'test@test.com', '1234', []);
+      const user = new User('url', 'test', 'test@test.com', []);
       global.fetch = jest.fn().mockResolvedValue({
         json: jest.fn().mockResolvedValue(user),
       });
@@ -60,7 +60,7 @@ describe('Given the http.user', () => {
 
   describe('When i use the method updateUser', () => {
     test('Then should be render', async () => {
-      const user = new User('url', 'test', 'test@test.com', '1234', []);
+      const user = new User('url', 'test', 'test@test.com', []);
       const modifyUser = { ...user, userName: 'pepe' };
       global.fetch = jest.fn().mockResolvedValue({
         json: jest.fn().mockResolvedValue(modifyUser),
@@ -74,7 +74,7 @@ describe('Given the http.user', () => {
 
   describe('When i use the method deleteUser', () => {
     test('Then should be render', async () => {
-      const user = new User('url', 'test', 'test@test.com', '1234', []);
+      const user = new User('url', 'test', 'test@test.com', []);
 
       global.fetch = jest.fn().mockResolvedValue({
         json: jest.fn().mockResolvedValue(user),

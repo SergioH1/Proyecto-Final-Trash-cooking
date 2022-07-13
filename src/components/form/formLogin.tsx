@@ -6,10 +6,10 @@ import { HttpUser } from '../../services/http.user';
 
 import { loadUserAction } from '../../reducer/user/user.action.creators';
 import './form.css';
+import Swal from 'sweetalert2';
 export function FormLogin() {
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
-    token: '',
     user: { id: '', userName: '', email: '', password: '', recipes: [] },
   });
   let navigate = useNavigate();
@@ -17,19 +17,23 @@ export function FormLogin() {
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
     const response = await new HttpUser().loginUser(formData.user);
-    console.log(response);
 
     if (response.token) {
       dispatch(loadUserAction(response));
       localStorage.setItem('user', JSON.stringify(response));
       navigate('/home');
+    } else {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Do you want to continue',
+        icon: 'error',
+        confirmButtonText: 'Cool',
+      });
     }
   };
-
   function handleChange(ev: SyntheticEvent) {
     const element = ev.target as HTMLFormElement;
     setFormData({
-      token: '',
       user: { ...formData.user, [element.name]: element.value },
     });
   }
@@ -52,6 +56,7 @@ export function FormLogin() {
             autoFocus
             required
             onChange={handleChange}
+            name="email"
           />
         </div>
         <div className="for__item">
@@ -60,7 +65,9 @@ export function FormLogin() {
             className="form__input"
             placeholder="Password"
             required
+            value={formData.user.password}
             onChange={handleChange}
+            name="password"
           />
         </div>
 

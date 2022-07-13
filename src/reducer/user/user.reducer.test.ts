@@ -8,7 +8,6 @@ const mockedUser: userWithToken = {
     userName: 's',
     email: '',
     password: '1231',
-    avatar: '',
   },
 };
 
@@ -23,7 +22,6 @@ describe('Given reducer reciperReducer', () => {
             userName: '1',
             email: '',
             password: '1',
-            avatar: '',
           },
         },
         actions.loadUserAction(mockedUser)
@@ -43,7 +41,6 @@ describe('Given reducer reciperReducer', () => {
             userName: 'se',
             email: '',
             password: '1231',
-            avatar: '',
           },
         })
       );

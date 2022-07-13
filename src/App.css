@@ -137,3 +137,8 @@ p span {
   line-height: 1.3 !important;
   font-size: 18px !important;
 }
+.swal2-styled.swal2-confirm {
+  background-color: brown !important;
+  border-left-color: #444444 !important;
+  border-right-color: #444444 !important;
+}
