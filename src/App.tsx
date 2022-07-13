@@ -26,7 +26,7 @@ function App() {
   const RecipePage = React.lazy(() => import('./pages/recipe'));
   const ProfilePage = React.lazy(() => import('./pages/profile'));
   const options: aMenuItems = [
-    { path: '/home', label: 'Products', page: <HomePage /> },
+    { path: '/', label: 'Products', page: <HomePage /> },
     { path: '/login', label: 'Pack', page: <LoginPage /> },
     { path: '/register', label: 'Unit', page: <RegisterPage /> },
     { path: '/recetas', label: 'Recipe', page: <RecipePage /> },

@@ -21,7 +21,7 @@ export function FormLogin() {
     if (response.token) {
       dispatch(loadUserAction(response));
       localStorage.setItem('user', JSON.stringify(response));
-      navigate('/home');
+      navigate('/');
     } else {
       Swal.fire({
         title: 'Error!',
@@ -76,7 +76,10 @@ export function FormLogin() {
             Login
           </button>
           <p className="form__hint--text">
-            ¿No tienes una cuenta? <Link to={'/register'}>Create una </Link>
+            ¿No tienes una cuenta?{' '}
+            <Link className="form__hint--text2" to={'/register'}>
+              Create una{' '}
+            </Link>
           </p>
         </div>
       </form>

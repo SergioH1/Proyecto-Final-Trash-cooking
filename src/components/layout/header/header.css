@@ -6,7 +6,13 @@
   text-align: center;
   justify-content: space-around;
   width: 100%;
-  height: 80px;
+  height: 60px;
   padding: 2rem;
   background-color: #fef8de;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 2px -1px;
+}
+.header__container__pages {
+  color: black;
+  font-size: 1.2rem;
 }

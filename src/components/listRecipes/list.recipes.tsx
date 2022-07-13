@@ -8,12 +8,18 @@ export function ListRecipes() {
   let template = (
     <>
       <ul className="container-picture">
-        {recipes.map((recipe) => (
-          <li key={recipe.id}>
-            <img className="picture--img" src={recipe.img} alt={recipe.title} />
-            <p> {recipe.title}</p>
-          </li>
-        ))}
+        {recipes
+          // .filter((recipe) => recipe.origin === 'Spain')
+          .map((recipe) => (
+            <li key={recipe.title}>
+              <img
+                className="picture--img"
+                src={recipe.img}
+                alt={recipe.title}
+              />
+              <p> {recipe.title}</p>
+            </li>
+          ))}
       </ul>
     </>
   );

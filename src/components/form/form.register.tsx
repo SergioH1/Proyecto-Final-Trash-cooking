@@ -17,7 +17,6 @@ export function FormRegister() {
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
     const response = await new HttpUser().registerUser(formData);
-    console.log(response);
 
     if (response.userName) {
       navigate('/login');
@@ -41,7 +40,7 @@ export function FormRegister() {
       <header className="form__header">
         <h2 className="form__title"> Register</h2>
         <p className="form__legend">
-          Por favor introduce tu e-mail y contraseña
+          Por favor complete la siguiente información:
         </p>
       </header>
       <div className="for__item">
@@ -81,9 +80,6 @@ export function FormRegister() {
       <button type="submit" className="btn btn1">
         Crear mi usuario
       </button>
-      <div className="form__hint">
-        <p className="form__hint--text"></p>
-      </div>
     </form>
   );
 

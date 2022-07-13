@@ -10,6 +10,7 @@
   margin-right: auto;
   margin-bottom: 35px;
   margin-left: auto;
+  text-align: center;
 }
 
 .form__container {
@@ -23,13 +24,14 @@
 }
 .form__header {
   margin-bottom: 24px;
-  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .form__title {
   font-size: 1.3rem;
-  font-family: Signifier Regular !important;
-  letter-spacing: 1.4px !important;
-  line-height: 1.3 !important;
+  font-family: 'Signifier Regular', sans-serif;
 }
 .form__legend {
   font-size: 0.8rem;
@@ -40,6 +42,7 @@
   border-radius: 0;
   border: 1px solid rgb(47, 47, 47);
   width: 100%;
+  height: 28px;
   line-height: normal;
   resize: none;
   background: transparent;
@@ -55,9 +58,9 @@
   margin: 30px 0;
   border: 2px solid #000000;
   padding: 14px 60px;
-
   background-color: transparent;
   cursor: pointer;
+  overflow: hidden;
 }
 .btn1::after {
   background: #000000;
@@ -69,10 +72,23 @@
   z-index: -1;
 }
 .btn:hover {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .btn1:hover::after {
-  width: 100.5%;
-  height: 100%;
+  width: 101%;
+  height: 200%;
   transition: 0.8s;
+}
+.form__hint {
+  text-align: center;
+}
+.form__hint--text {
+  font-size: 0.8rem;
+}
+.form__hint--text2 {
+  font-weight: bolder;
+  color: #000000;
+}
+.form__hint--text2:hover {
+  color: #2b2b2b;
 }
