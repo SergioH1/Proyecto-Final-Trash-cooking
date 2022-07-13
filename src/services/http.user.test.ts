@@ -8,8 +8,8 @@ describe('Given the http.user', () => {
         json: jest
           .fn()
           .mockResolvedValue([
-            new User('url', 'test', 'test@test.com', []),
-            new User('url', 'test2', 'test2@test.com', []),
+            new User('test', 'test', 'test@test.com', []),
+            new User('test', 'test2', 'test2@test.com', []),
           ]),
       });
       const result = await new HttpUser().getAllUsers();
@@ -21,7 +21,7 @@ describe('Given the http.user', () => {
 
   describe('When i use the method getUser', () => {
     test('Then should be render', async () => {
-      const user = new User('url', 'test', 'test@test.com', []);
+      const user = new User('test', 'test', 'test@test.com', []);
       global.fetch = jest.fn().mockResolvedValue({
         json: jest.fn().mockResolvedValue(user),
       });
@@ -34,7 +34,7 @@ describe('Given the http.user', () => {
 
   describe('When i use the method registerUser', () => {
     test('Then should be render', async () => {
-      const user = new User('url', 'test', 'test@test.com', []);
+      const user = new User('test', 'test', 'test@test.com', []);
       global.fetch = jest.fn().mockResolvedValue({
         json: jest.fn().mockResolvedValue(user),
       });
@@ -51,16 +51,16 @@ describe('Given the http.user', () => {
       global.fetch = jest.fn().mockResolvedValue({
         json: jest.fn().mockResolvedValue(user),
       });
-      const result = await new HttpUser().loginUser(user);
+      await new HttpUser().loginUser(user);
 
       expect(fetch).toBeCalled();
-      expect(result.user.userName).toBe('test');
+      expect(user.userName).toBe('test');
     });
   });
 
   describe('When i use the method updateUser', () => {
     test('Then should be render', async () => {
-      const user = new User('url', 'test', 'test@test.com', []);
+      const user = new User('test', 'test', 'test@test.com', []);
       const modifyUser = { ...user, userName: 'pepe' };
       global.fetch = jest.fn().mockResolvedValue({
         json: jest.fn().mockResolvedValue(modifyUser),
