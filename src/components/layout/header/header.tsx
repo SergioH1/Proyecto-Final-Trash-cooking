@@ -15,7 +15,10 @@ export function Header() {
           </Link>
         </h3>
         <hgroup className="title__container">
-          <h2 className="title">Trash-cooking</h2>
+          <Link to="/" className="title">
+            <h2 className="title">Trash-cooking</h2>{' '}
+          </Link>
+
           <h3 className="subtitle">キッチン</h3>
         </hgroup>
         <h3 className="header__container__pages">

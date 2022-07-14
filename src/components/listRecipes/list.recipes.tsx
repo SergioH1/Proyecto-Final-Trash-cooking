@@ -9,7 +9,35 @@ export function ListRecipes() {
     <>
       <ul className="container-picture">
         {recipes
-          // .filter((recipe) => recipe.origin === 'Spain')
+          .filter((recipe) => recipe.origin === 'Asian')
+          .map((recipe) => (
+            <li key={recipe.title}>
+              <img
+                className="picture--img"
+                src={recipe.img}
+                alt={recipe.title}
+              />
+              <p> {recipe.title}</p>
+            </li>
+          ))}
+      </ul>
+      <ul className="container-picture">
+        {recipes
+          .filter((recipe) => recipe.origin === 'Spain')
+          .map((recipe) => (
+            <li key={recipe.title}>
+              <img
+                className="picture--img"
+                src={recipe.img}
+                alt={recipe.title}
+              />
+              <p> {recipe.title}</p>
+            </li>
+          ))}
+      </ul>
+      <ul className="container-picture">
+        {recipes
+          .filter((recipe) => recipe.origin === 'Isdi')
           .map((recipe) => (
             <li key={recipe.title}>
               <img
