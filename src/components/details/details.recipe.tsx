@@ -7,6 +7,7 @@ export function DetailsRecipe({ recipe }: { recipe: iRecipe }) {
         <h3> Receta </h3>
         <h2> {recipe.title}</h2>
         <img src={recipe.img} alt={recipe.title} />
+        <button> Fav</button>
       </div>
 
       <div>

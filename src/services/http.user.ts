@@ -1,4 +1,5 @@
 import { iUser, userWithToken } from '../interfaces/interfaces';
+import { getToken } from '../utils/getToken';
 
 export class HttpUser {
   url: string;
@@ -41,5 +42,12 @@ export class HttpUser {
     return fetch(this.url + `/${user.id}`, {
       method: 'DELETE',
     }).then((resp) => resp.status);
+  }
+
+  addToFavorites(id: string) {
+    return fetch(this.url + '/addrecipes/' + id, {
+      method: 'PATCH',
+      headers: { Authorization: 'Bearer ' + getToken() },
+    }).then((resp) => resp.json());
   }
 }

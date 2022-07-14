@@ -20,7 +20,7 @@ export function FormLogin() {
 
     if (response.token) {
       dispatch(loadUserAction(response));
-      localStorage.setItem('user', JSON.stringify(response));
+      localStorage.setItem('token', response.token);
       navigate('/');
     } else {
       Swal.fire({
@@ -31,6 +31,7 @@ export function FormLogin() {
       });
     }
   };
+
   function handleChange(ev: SyntheticEvent) {
     const element = ev.target as HTMLFormElement;
     setFormData({

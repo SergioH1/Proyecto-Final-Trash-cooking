@@ -10,11 +10,13 @@ import { useDispatch } from 'react-redux';
 import { useEffect, useMemo } from 'react';
 import { HttpRecipe } from './services/http.recipes';
 import { loadRecipesAction } from './reducer/recipes/recipe.action.creators';
+import { getToken } from './utils/getToken';
 
 /* istanbul ignore file */
 function App() {
   const dispatcher = useDispatch();
   const apiRecipes = useMemo(() => new HttpRecipe(), []);
+  console.log(getToken(), 'TOKEN');
 
   useEffect(() => {
     apiRecipes.getAllRecipes().then((recipes) => {

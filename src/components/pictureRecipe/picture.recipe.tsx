@@ -4,7 +4,9 @@ import { iRecipe } from '../../interfaces/interfaces';
 export function PictureRecipe({ recipe }: { recipe: iRecipe }) {
   return (
     <Link to={'/receta'} state={{ recipe }}>
-      <img className="picture--img" src={recipe.img} alt={recipe.title} />
+      <label>
+        <img className="picture--img" src={recipe.img} alt={recipe.title} />
+      </label>
     </Link>
   );
 }

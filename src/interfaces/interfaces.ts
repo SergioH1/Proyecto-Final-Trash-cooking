@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 
 export interface iRecipe {
-  id?: string;
+  _id?: string;
   title: string;
   origin: string;
   content: string;
