@@ -15,6 +15,7 @@ import { loadRecipesAction } from './reducer/recipes/recipe.action.creators';
 function App() {
   const dispatcher = useDispatch();
   const apiRecipes = useMemo(() => new HttpRecipe(), []);
+
   useEffect(() => {
     apiRecipes.getAllRecipes().then((recipes) => {
       dispatcher(loadRecipesAction(recipes));
@@ -29,7 +30,7 @@ function App() {
     { path: '/', label: 'Products', page: <HomePage /> },
     { path: '/login', label: 'Pack', page: <LoginPage /> },
     { path: '/register', label: 'Unit', page: <RegisterPage /> },
-    { path: '/recetas', label: 'Recipe', page: <RecipePage /> },
+    { path: '/receta', label: 'Recipe', page: <RecipePage /> },
     { path: '/perfil', label: 'Perfil', page: <ProfilePage /> },
   ];
   return (

@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { iStore } from '../../app/store';
+import { PictureRecipe } from '../pictureRecipe/picture.recipe';
 
 import './list.recipes.css';
 export function ListRecipes() {
@@ -12,11 +13,7 @@ export function ListRecipes() {
           .filter((recipe) => recipe.origin === 'Asian')
           .map((recipe) => (
             <li key={recipe.title}>
-              <img
-                className="picture--img"
-                src={recipe.img}
-                alt={recipe.title}
-              />
+              <PictureRecipe recipe={recipe}></PictureRecipe>
               <p> {recipe.title}</p>
             </li>
           ))}
@@ -26,11 +23,7 @@ export function ListRecipes() {
           .filter((recipe) => recipe.origin === 'Spain')
           .map((recipe) => (
             <li key={recipe.title}>
-              <img
-                className="picture--img"
-                src={recipe.img}
-                alt={recipe.title}
-              />
+              <PictureRecipe recipe={recipe}></PictureRecipe>
               <p> {recipe.title}</p>
             </li>
           ))}
@@ -40,11 +33,7 @@ export function ListRecipes() {
           .filter((recipe) => recipe.origin === 'Isdi')
           .map((recipe) => (
             <li key={recipe.title}>
-              <img
-                className="picture--img"
-                src={recipe.img}
-                alt={recipe.title}
-              />
+              <PictureRecipe recipe={recipe}></PictureRecipe>
               <p> {recipe.title}</p>
             </li>
           ))}

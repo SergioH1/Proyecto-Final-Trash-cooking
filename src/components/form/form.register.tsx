@@ -12,7 +12,7 @@ export function FormRegister() {
     userName: '',
     email: '',
     password: '',
-    comics: [],
+    repcipes: [],
   });
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();

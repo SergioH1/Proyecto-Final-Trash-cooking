@@ -1,9 +1,5 @@
 import { ReactElement } from 'react';
-export interface iIngredient {
-  id: string;
-  name: string;
-  category: string;
-}
+
 export interface iRecipe {
   id?: string;
   title: string;
@@ -14,9 +10,14 @@ export interface iRecipe {
   keyword: Array<string>;
 }
 export interface iFood {
-  ingredient: string;
+  ingredient: iIngredient;
   amount: number;
   measure: string;
+}
+export interface iIngredient {
+  id: string;
+  name: string;
+  category: string;
 }
 export interface iUser {
   id?: string;

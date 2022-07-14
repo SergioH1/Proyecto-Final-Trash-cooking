@@ -4,11 +4,11 @@ export function Header() {
   let template = (
     <>
       <header className="header__container">
-        <h3 className="header__container__pages">
+        {/* <h3 className="header__container__pages">
           <Link className="header__container__pages" to="/recetas">
             Recetas
           </Link>
-        </h3>
+        </h3> */}
         <h3 className="header__container__pages">
           <Link className="header__container__pages" to="/perfil">
             Perfil

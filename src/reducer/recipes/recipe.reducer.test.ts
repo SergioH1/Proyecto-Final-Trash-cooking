@@ -12,7 +12,11 @@ const mockedArray: Array<iRecipe> = [
     img: '',
     ingredients: [
       {
-        ingredient: 'pollo',
+        ingredient: {
+          name: 'pollo',
+          id: '1',
+          category: '1',
+        },
         measure: 'muslos',
         amount: 3,
       },
@@ -27,7 +31,11 @@ const mockedArray: Array<iRecipe> = [
     img: '',
     ingredients: [
       {
-        ingredient: 'gambas',
+        ingredient: {
+          name: 'gamba',
+          id: '1',
+          category: '1',
+        },
         measure: 'muslos',
         amount: 3,
       },
