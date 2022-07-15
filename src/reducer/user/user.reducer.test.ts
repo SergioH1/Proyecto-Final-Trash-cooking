@@ -47,4 +47,21 @@ describe('Given reducer reciperReducer', () => {
       expect(newState.user.userName).toBe('se');
     });
   });
+  describe('When calling it with loadbytoken with a user or partial user', () => {
+    test('It should return a new state with a updated user', () => {
+      const newState = usersReducer(
+        mockedUser,
+        actions.loadUserAction({
+          ...mockedUser,
+          user: {
+            _id: '',
+            userName: 'se',
+            email: '',
+            password: '1231',
+          },
+        })
+      );
+      expect(newState.user.userName).toBe('se');
+    });
+  });
 });

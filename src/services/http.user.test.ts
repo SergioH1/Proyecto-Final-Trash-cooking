@@ -1,6 +1,7 @@
 import { User } from '../models/user.model';
+import { getToken } from '../utils/getToken';
 import { HttpUser } from './http.user';
-
+jest.mock('../utils/getToken');
 describe('Given the http.user', () => {
   describe('When i use the method getAllUsers', () => {
     test('Then should be render', async () => {
@@ -83,6 +84,20 @@ describe('Given the http.user', () => {
 
       expect(fetch).toBeCalled();
       expect(result).toBe(undefined);
+    });
+  });
+  describe('When i use the method addTofavorites', () => {
+    test('Then should be get token is called', async () => {
+      const user = new User('test', 'test', 'test@test.com', []);
+      const modifyUser = { ...user, userName: 'pepe' };
+      global.fetch = jest.fn().mockResolvedValue({
+        json: jest.fn().mockResolvedValue(modifyUser),
+      });
+
+      const result = await new HttpUser().addToFavorites('');
+
+      expect(fetch).toBeCalled();
+      expect(result).toBe(modifyUser);
     });
   });
 });

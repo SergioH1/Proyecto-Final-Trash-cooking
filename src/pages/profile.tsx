@@ -8,6 +8,7 @@ export function ProfilePage() {
   //  const location = useLocation();
   //  const stateRecipe = location.state as { recipe: iRecipe };
   const storeUser = useSelector((store: iStore) => store.user);
+
   console.log(storeUser);
   let template: JSX.Element;
 
