@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@1,300&display=swap');
 html,
 body,
 div,
@@ -124,4 +125,21 @@ table {
 }
 a {
   text-decoration: none;
+}
+* {
+  font-family: 'Albert Sans', sans-serif;
+  letter-spacing: 1.2px !important;
+  line-height: 1.3 !important;
+}
+
+p,
+p span {
+  font-family: 'Albert Sans', sans-serif;
+  line-height: 1.3;
+  font-size: 18px;
+}
+.swal2-styled.swal2-confirm {
+  background-color: brown !important;
+  border-left-color: #444444 !important;
+  border-right-color: #444444 !important;
 }

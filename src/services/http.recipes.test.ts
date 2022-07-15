@@ -38,7 +38,11 @@ describe('Given the services htttp.ingredients is instantiated', () => {
       });
 
       const response = await api.updateIngredientRecipe('21', {
-        ingredient: 'gamba',
+        ingredient: {
+          name: 'gamba',
+          id: '1',
+          category: '1',
+        },
         amount: 2,
         measure: 'unidades',
       });

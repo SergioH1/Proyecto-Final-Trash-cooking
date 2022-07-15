@@ -1,15 +1,11 @@
-import { userWithToken } from '../../interfaces/interfaces';
-import { usersReducer } from './user.reduer';
+import { iUser } from '../../interfaces/interfaces';
+import { usersReducer } from './user.reducer';
 import * as actions from './user.action.creators';
-const mockedUser: userWithToken = {
-  token: '123',
-  user: {
-    id: '',
-    userName: 's',
-    email: '',
-    password: '1231',
-    avatar: '',
-  },
+const mockedUser: iUser = {
+  _id: '',
+  userName: 's',
+  email: '',
+  password: '1231',
 };
 
 describe('Given reducer reciperReducer', () => {
@@ -17,15 +13,12 @@ describe('Given reducer reciperReducer', () => {
     test('It should return a new state with thaht array', () => {
       const newState = usersReducer(
         {
-          token: '',
-          user: {
-            id: '',
-            userName: '1',
-            email: '',
-            password: '1',
-            avatar: '',
-          },
+          _id: '',
+          userName: '1',
+          email: '',
+          password: '1',
         },
+
         actions.loadUserAction(mockedUser)
       );
 
@@ -37,17 +30,13 @@ describe('Given reducer reciperReducer', () => {
       const newState = usersReducer(
         mockedUser,
         actions.updateUserAction({
-          ...mockedUser,
-          user: {
-            id: '',
-            userName: 'se',
-            email: '',
-            password: '1231',
-            avatar: '',
-          },
+          _id: '',
+          userName: 'se',
+          email: '',
+          password: '1231',
         })
       );
-      expect(newState.user.userName).toBe('se');
+      expect(newState.userName).toBe('se');
     });
   });
 });

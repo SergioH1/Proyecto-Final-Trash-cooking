@@ -5,14 +5,18 @@ import { iRecipe } from '../../interfaces/interfaces';
 
 const mockedArray: Array<iRecipe> = [
   {
-    id: '1',
+    _id: '1',
     title: 'Arroz con pollo',
     origin: 'global',
     content: '',
     img: '',
     ingredients: [
       {
-        ingredient: 'pollo',
+        ingredient: {
+          name: 'pollo',
+          id: '1',
+          category: '1',
+        },
         measure: 'muslos',
         amount: 3,
       },
@@ -20,14 +24,18 @@ const mockedArray: Array<iRecipe> = [
     keyword: ['pollo', 'arroz'],
   },
   {
-    id: '2',
+    _id: '2',
     title: 'Arroz con gambas',
     origin: 'global',
     content: '',
     img: '',
     ingredients: [
       {
-        ingredient: 'gambas',
+        ingredient: {
+          name: 'gamba',
+          id: '1',
+          category: '1',
+        },
         measure: 'muslos',
         amount: 3,
       },
@@ -63,7 +71,7 @@ describe('Given recipes reducer', () => {
           title: 'Arroz con Pollo asiatico',
         })
       );
-      expect(newState.find((item) => item.id === '1')?.title).toBe(
+      expect(newState.find((item) => item._id === '1')?.title).toBe(
         'Arroz con Pollo asiatico'
       );
     });

@@ -1,6 +1,7 @@
 import { User } from '../models/user.model';
+import { getToken } from '../utils/getToken';
 import { HttpUser } from './http.user';
-
+jest.mock('../utils/getToken');
 describe('Given the http.user', () => {
   describe('When i use the method getAllUsers', () => {
     test('Then should be render', async () => {
@@ -8,8 +9,8 @@ describe('Given the http.user', () => {
         json: jest
           .fn()
           .mockResolvedValue([
-            new User('url', 'test', 'test@test.com', '1234', []),
-            new User('url', 'test2', 'test2@test.com', '1234', []),
+            new User('test', 'test', 'test@test.com', []),
+            new User('test', 'test2', 'test2@test.com', []),
           ]),
       });
       const result = await new HttpUser().getAllUsers();
@@ -21,7 +22,7 @@ describe('Given the http.user', () => {
 
   describe('When i use the method getUser', () => {
     test('Then should be render', async () => {
-      const user = new User('url', 'test', 'test@test.com', '1234', []);
+      const user = new User('test', 'test', 'test@test.com', []);
       global.fetch = jest.fn().mockResolvedValue({
         json: jest.fn().mockResolvedValue(user),
       });
@@ -34,7 +35,7 @@ describe('Given the http.user', () => {
 
   describe('When i use the method registerUser', () => {
     test('Then should be render', async () => {
-      const user = new User('url', 'test', 'test@test.com', '1234', []);
+      const user = new User('test', 'test', 'test@test.com', []);
       global.fetch = jest.fn().mockResolvedValue({
         json: jest.fn().mockResolvedValue(user),
       });
@@ -51,16 +52,16 @@ describe('Given the http.user', () => {
       global.fetch = jest.fn().mockResolvedValue({
         json: jest.fn().mockResolvedValue(user),
       });
-      const result = await new HttpUser().loginUser(user);
+      await new HttpUser().loginUser(user);
 
       expect(fetch).toBeCalled();
-      expect(result.user.userName).toBe('test');
+      expect(user.userName).toBe('test');
     });
   });
 
   describe('When i use the method updateUser', () => {
     test('Then should be render', async () => {
-      const user = new User('url', 'test', 'test@test.com', '1234', []);
+      const user = new User('test', 'test', 'test@test.com', []);
       const modifyUser = { ...user, userName: 'pepe' };
       global.fetch = jest.fn().mockResolvedValue({
         json: jest.fn().mockResolvedValue(modifyUser),
@@ -74,7 +75,7 @@ describe('Given the http.user', () => {
 
   describe('When i use the method deleteUser', () => {
     test('Then should be render', async () => {
-      const user = new User('url', 'test', 'test@test.com', '1234', []);
+      const user = new User('url', 'test', 'test@test.com', []);
 
       global.fetch = jest.fn().mockResolvedValue({
         json: jest.fn().mockResolvedValue(user),
@@ -83,6 +84,20 @@ describe('Given the http.user', () => {
 
       expect(fetch).toBeCalled();
       expect(result).toBe(undefined);
+    });
+  });
+  describe('When i use the method addTofavorites', () => {
+    test('Then should be get token is called', async () => {
+      const user = new User('test', 'test', 'test@test.com', []);
+      const modifyUser = { ...user, userName: 'pepe' };
+      global.fetch = jest.fn().mockResolvedValue({
+        json: jest.fn().mockResolvedValue(modifyUser),
+      });
+
+      const result = await new HttpUser().addToFavorites('');
+
+      expect(fetch).toBeCalled();
+      expect(result).toBe(modifyUser);
     });
   });
 });

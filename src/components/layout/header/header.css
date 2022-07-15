@@ -1,10 +1,21 @@
 .header__container {
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: row;
   text-align: center;
   justify-content: space-around;
-  height: 80px;
+  width: 100%;
+  height: 60px;
   padding: 2rem;
   background-color: #fef8de;
-  position: sticky;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 2px -1px;
+}
+.header__container__pages {
+  color: black;
+  font-size: 1.2rem;
+}
+.title {
+  color: black;
 }

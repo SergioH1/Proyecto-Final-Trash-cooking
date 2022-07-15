@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { iStore } from '../../app/store';
+import { PictureRecipe } from '../pictureRecipe/picture.recipe';
 
 import './list.recipes.css';
 export function ListRecipes() {
@@ -8,12 +9,43 @@ export function ListRecipes() {
   let template = (
     <>
       <ul className="container-picture">
-        {recipes.map((recipe) => (
-          <li key={recipe.id}>
-            <img className="picture--img" src={recipe.img} alt={recipe.title} />
-            <p> {recipe.title}</p>
-          </li>
-        ))}
+        {recipes
+          .filter((recipe) => recipe.origin === 'Asian')
+          .map((recipe) => (
+            <li key={recipe.title}>
+              <PictureRecipe
+                styles="picture--img"
+                recipe={recipe}
+              ></PictureRecipe>
+              <p> {recipe.title}</p>
+            </li>
+          ))}
+      </ul>
+      <ul className="container-picture">
+        {recipes
+          .filter((recipe) => recipe.origin === 'Spain')
+          .map((recipe) => (
+            <li key={recipe.title}>
+              <PictureRecipe
+                styles="picture--img"
+                recipe={recipe}
+              ></PictureRecipe>
+              <p> {recipe.title}</p>
+            </li>
+          ))}
+      </ul>
+      <ul className="container-picture">
+        {recipes
+          .filter((recipe) => recipe.origin === 'Isdi')
+          .map((recipe) => (
+            <li key={recipe.title}>
+              <PictureRecipe
+                styles="picture--img"
+                recipe={recipe}
+              ></PictureRecipe>
+              <p> {recipe.title}</p>
+            </li>
+          ))}
       </ul>
     </>
   );

@@ -1,4 +1,5 @@
 import { iUser, userWithToken } from '../interfaces/interfaces';
+import { getToken } from '../utils/getToken';
 
 export class HttpUser {
   url: string;
@@ -8,9 +9,19 @@ export class HttpUser {
   getAllUsers(): Promise<iUser[]> {
     return fetch(this.url).then((resp) => resp.json());
   }
+  getUserByToken(token: string): Promise<iUser> {
+    return fetch('http://localhost:3700/user/token', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + token,
+      },
+    }).then((resp) => resp.json());
+  }
 
   getUser(user: iUser): Promise<iUser> {
-    return fetch(this.url + `/${user.id}`).then((resp) => resp.json());
+    return fetch(this.url + `/${user._id}`).then((resp) => resp.json());
   }
 
   registerUser(user: iUser): Promise<iUser> {
@@ -30,7 +41,7 @@ export class HttpUser {
   }
 
   updateUser(user: iUser): Promise<iUser> {
-    return fetch(this.url + `/${user.id}`, {
+    return fetch(this.url + `/${user._id}`, {
       method: 'PATCH',
       body: JSON.stringify(user),
       headers: { 'content-type': 'application/json' },
@@ -38,8 +49,15 @@ export class HttpUser {
   }
 
   deleteUser(user: iUser): Promise<number> {
-    return fetch(this.url + `/${user.id}`, {
+    return fetch(this.url + `/${user._id}`, {
       method: 'DELETE',
     }).then((resp) => resp.status);
+  }
+
+  addToFavorites(id: string) {
+    return fetch(this.url + '/addrecipes/' + id, {
+      method: 'PATCH',
+      headers: { Authorization: 'Bearer ' + getToken() },
+    }).then((resp) => resp.json());
   }
 }
