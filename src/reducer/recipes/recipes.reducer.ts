@@ -12,11 +12,11 @@ export const recipeReducer = createReducer(initialState, (builder) =>
     ])
     .addCase(actions.updateRecipeAction, (state, action) =>
       state.map((item) =>
-        item.id === action.payload.id ? action.payload : item
+        item._id === action.payload._id ? action.payload : item
       )
     )
     .addCase(actions.deleteRecipeAction, (state, action) =>
-      state.filter((item) => item.id !== action.payload.id)
+      state.filter((item) => item._id !== action.payload._id)
     )
     .addDefaultCase((state) => state)
 );

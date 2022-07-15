@@ -4,7 +4,7 @@ import * as actions from './user.action.creators';
 const mockedUser: userWithToken = {
   token: '123',
   user: {
-    id: '',
+    _id: '',
     userName: 's',
     email: '',
     password: '1231',
@@ -18,7 +18,7 @@ describe('Given reducer reciperReducer', () => {
         {
           token: '',
           user: {
-            id: '',
+            _id: '',
             userName: '1',
             email: '',
             password: '1',
@@ -37,7 +37,7 @@ describe('Given reducer reciperReducer', () => {
         actions.updateUserAction({
           ...mockedUser,
           user: {
-            id: '',
+            _id: '',
             userName: 'se',
             email: '',
             password: '1231',

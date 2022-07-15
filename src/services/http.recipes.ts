@@ -14,7 +14,7 @@ export class HttpRecipe {
     return fetch(this.url + `/${id}`).then((resp) => resp.json());
   }
   updateIngredientRecipe = (
-    id: iRecipe['id'],
+    id: iRecipe['_id'],
     data: iFood
   ): Promise<iRecipe> => {
     return fetch(this.url + '/addIngredient/' + id, {
@@ -26,7 +26,7 @@ export class HttpRecipe {
     }).then((resp) => resp.json());
   };
   updateKeywordsRecipe = (
-    id: iRecipe['id'],
+    id: iRecipe['_id'],
     data: string
   ): Promise<iRecipe> => {
     return fetch(this.url + '/addKeywords/' + id, {

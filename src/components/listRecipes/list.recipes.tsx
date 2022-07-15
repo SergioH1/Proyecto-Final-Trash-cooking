@@ -13,7 +13,10 @@ export function ListRecipes() {
           .filter((recipe) => recipe.origin === 'Asian')
           .map((recipe) => (
             <li key={recipe.title}>
-              <PictureRecipe recipe={recipe}></PictureRecipe>
+              <PictureRecipe
+                styles="picture--img"
+                recipe={recipe}
+              ></PictureRecipe>
               <p> {recipe.title}</p>
             </li>
           ))}
@@ -23,7 +26,10 @@ export function ListRecipes() {
           .filter((recipe) => recipe.origin === 'Spain')
           .map((recipe) => (
             <li key={recipe.title}>
-              <PictureRecipe recipe={recipe}></PictureRecipe>
+              <PictureRecipe
+                styles="picture--img"
+                recipe={recipe}
+              ></PictureRecipe>
               <p> {recipe.title}</p>
             </li>
           ))}
@@ -33,7 +39,10 @@ export function ListRecipes() {
           .filter((recipe) => recipe.origin === 'Isdi')
           .map((recipe) => (
             <li key={recipe.title}>
-              <PictureRecipe recipe={recipe}></PictureRecipe>
+              <PictureRecipe
+                styles="picture--img"
+                recipe={recipe}
+              ></PictureRecipe>
               <p> {recipe.title}</p>
             </li>
           ))}

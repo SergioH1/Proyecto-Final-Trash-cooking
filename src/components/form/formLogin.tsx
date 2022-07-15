@@ -20,7 +20,9 @@ export function FormLogin() {
 
     if (response.token) {
       dispatch(loadUserAction(response));
+
       localStorage.setItem('token', response.token);
+      localStorage.setItem('id', response.user._id as string);
       navigate('/');
     } else {
       Swal.fire({

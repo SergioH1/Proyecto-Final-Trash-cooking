@@ -20,7 +20,8 @@ export interface iIngredient {
   category: string;
 }
 export interface iUser {
-  id?: string;
+  _id?: string;
+
   userName: string;
   email: string;
   password: string;

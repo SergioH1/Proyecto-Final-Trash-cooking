@@ -9,7 +9,7 @@ import { HttpUser } from '../services/http.user';
 export function RecipePage() {
   const location = useLocation();
   const stateRecipe = location.state as { recipe: iRecipe };
-  console.log(stateRecipe, 'soy yo');
+
   const dispatch = useDispatch();
   function handleFav() {
     new HttpUser()
