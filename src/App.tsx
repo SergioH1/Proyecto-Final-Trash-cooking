@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router';
 import './App.css';
 
-import { aMenuItems, userWithToken } from './interfaces/interfaces';
+import { aMenuItems } from './interfaces/interfaces';
 import { Layout } from './components/layout/layout';
 import { BrowserRouter } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -10,12 +10,10 @@ import { useDispatch } from 'react-redux';
 import { useEffect, useMemo } from 'react';
 import { HttpRecipe } from './services/http.recipes';
 import { loadRecipesAction } from './reducer/recipes/recipe.action.creators';
-import { getToken } from './utils/getToken';
-import {
-  loadUserAction,
-  loadUserByToken,
-} from './reducer/user/user.action.creators';
+
+import { updateUserAction } from './reducer/user/user.action.creators';
 import { HttpUser } from './services/http.user';
+import ProfilePage from './pages/perfil';
 
 /* istanbul ignore file */
 function App() {
@@ -29,15 +27,15 @@ function App() {
     const token = localStorage.getItem('token');
     if (token) {
       apiUser.getUserByToken(token).then((data) => {
-        dispatcher(loadUserByToken(data));
+        dispatcher(updateUserAction(data));
       });
     }
-  }, [apiRecipes, dispatcher]);
+  }, [apiRecipes, apiUser, dispatcher]);
   const HomePage = React.lazy(() => import('./pages/home'));
   const LoginPage = React.lazy(() => import('./pages/login'));
   const RegisterPage = React.lazy(() => import('./pages/register'));
   const RecipePage = React.lazy(() => import('./pages/recipe'));
-  const ProfilePage = React.lazy(() => import('./pages/profile'));
+  // const ProfilePage = React.lazy(() => import('./pages/profile'));
   const options: aMenuItems = [
     { path: '/', label: 'Products', page: <HomePage /> },
     { path: '/login', label: 'Pack', page: <LoginPage /> },

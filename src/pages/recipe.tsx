@@ -14,8 +14,9 @@ export function RecipePage() {
   function handleFav() {
     new HttpUser()
       .addToFavorites(stateRecipe.recipe._id as string)
-      .then((item) => {
-        dispatch(updateUserAction(item));
+      .then((resp) => {
+        dispatch(updateUserAction(resp));
+        // console.log(item);
       });
   }
   let template = (

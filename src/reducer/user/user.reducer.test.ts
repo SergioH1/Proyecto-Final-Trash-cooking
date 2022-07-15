@@ -1,14 +1,11 @@
-import { userWithToken } from '../../interfaces/interfaces';
+import { iUser } from '../../interfaces/interfaces';
 import { usersReducer } from './user.reducer';
 import * as actions from './user.action.creators';
-const mockedUser: userWithToken = {
-  token: '123',
-  user: {
-    _id: '',
-    userName: 's',
-    email: '',
-    password: '1231',
-  },
+const mockedUser: iUser = {
+  _id: '',
+  userName: 's',
+  email: '',
+  password: '1231',
 };
 
 describe('Given reducer reciperReducer', () => {
@@ -16,14 +13,12 @@ describe('Given reducer reciperReducer', () => {
     test('It should return a new state with thaht array', () => {
       const newState = usersReducer(
         {
-          token: '',
-          user: {
-            _id: '',
-            userName: '1',
-            email: '',
-            password: '1',
-          },
+          _id: '',
+          userName: '1',
+          email: '',
+          password: '1',
         },
+
         actions.loadUserAction(mockedUser)
       );
 
@@ -35,33 +30,13 @@ describe('Given reducer reciperReducer', () => {
       const newState = usersReducer(
         mockedUser,
         actions.updateUserAction({
-          ...mockedUser,
-          user: {
-            _id: '',
-            userName: 'se',
-            email: '',
-            password: '1231',
-          },
+          _id: '',
+          userName: 'se',
+          email: '',
+          password: '1231',
         })
       );
-      expect(newState.user.userName).toBe('se');
-    });
-  });
-  describe('When calling it with loadbytoken with a user or partial user', () => {
-    test('It should return a new state with a updated user', () => {
-      const newState = usersReducer(
-        mockedUser,
-        actions.loadUserAction({
-          ...mockedUser,
-          user: {
-            _id: '',
-            userName: 'se',
-            email: '',
-            password: '1231',
-          },
-        })
-      );
-      expect(newState.user.userName).toBe('se');
+      expect(newState.userName).toBe('se');
     });
   });
 });

@@ -19,10 +19,9 @@ export function FormLogin() {
     const response = await new HttpUser().loginUser(formData.user);
 
     if (response.token) {
-      dispatch(loadUserAction(response));
+      dispatch(loadUserAction(response.user));
 
       localStorage.setItem('token', response.token);
-      localStorage.setItem('id', response.user._id as string);
       navigate('/');
     } else {
       Swal.fire({

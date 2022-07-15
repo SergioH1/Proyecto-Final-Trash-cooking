@@ -9,7 +9,6 @@ export function ProfilePage() {
   //  const stateRecipe = location.state as { recipe: iRecipe };
   const storeUser = useSelector((store: iStore) => store.user);
 
-  console.log(storeUser);
   let template: JSX.Element;
 
   template = (
@@ -17,11 +16,11 @@ export function ProfilePage() {
       <main className="page-content page-content--form">
         <FormUpdate></FormUpdate>
       </main>
-      {storeUser && (
+      {/* {storeUser && (
         <div className="">
           <h2> Mis Recetas Favoritas</h2>
           <ul>
-            {storeUser.user.recipes?.map((recipe) => (
+            {storeUser.recipes?.map((recipe) => (
               <li key={recipe._id}>
                 <PictureRecipe
                   styles="picture--img"
@@ -31,7 +30,7 @@ export function ProfilePage() {
             ))}
           </ul>
         </div>
-      )}
+      )} */}
     </>
   );
   return template;
