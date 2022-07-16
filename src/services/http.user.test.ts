@@ -1,5 +1,5 @@
 import { User } from '../models/user.model';
-import { getToken } from '../utils/getToken';
+
 import { HttpUser } from './http.user';
 jest.mock('../utils/getToken');
 describe('Given the http.user', () => {

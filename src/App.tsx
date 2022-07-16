@@ -35,13 +35,14 @@ function App() {
   const LoginPage = React.lazy(() => import('./pages/login'));
   const RegisterPage = React.lazy(() => import('./pages/register'));
   const RecipePage = React.lazy(() => import('./pages/recipe'));
-  // const ProfilePage = React.lazy(() => import('./pages/profile'));
+  const SearchPage = React.lazy(() => import('./pages/search'));
   const options: aMenuItems = [
     { path: '/', label: 'Products', page: <HomePage /> },
     { path: '/login', label: 'Pack', page: <LoginPage /> },
     { path: '/register', label: 'Unit', page: <RegisterPage /> },
     { path: '/receta', label: 'Recipe', page: <RecipePage /> },
     { path: '/profile', label: 'Perfil', page: <ProfilePage /> },
+    { path: '/search', label: 'Search', page: <SearchPage /> },
   ];
   return (
     <BrowserRouter>

@@ -6,28 +6,6 @@ import { iRecipe } from '../interfaces/interfaces';
 import { recipeReducer } from '../reducer/recipes/recipes.reducer';
 import { usersReducer } from '../reducer/user/user.reducer';
 
-// jest.mock('react-router-dom', () => ({
-//   ...jest.requireActual('react-router-dom'),
-//   useLocation: () => ({
-//     pathname: 'localhost:3000/example/path',
-//     state: {
-//       recipe: {
-//         img: 's',
-//         title: '3',
-//         ingredients: [
-//           {
-//             ingredient: {
-//               name: '',
-//             },
-//             ammout: 1,
-//             meassure: '3',
-//           },
-//         ],
-//       },
-//     },
-//   }),
-// }));
-
 const reducer = {
   user: usersReducer,
   recipes: recipeReducer,

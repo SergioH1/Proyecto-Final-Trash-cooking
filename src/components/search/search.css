@@ -1,0 +1,20 @@
+.container-search {
+  display: flex;
+  flex-direction: row;
+
+  margin: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.for__input--search {
+  width: 500px;
+  border-width: 0 0 1px;
+  padding-top: 49px;
+}
+
+.icon-search {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  height: 40px;
+  cursor: pointer;
+}

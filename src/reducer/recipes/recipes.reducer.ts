@@ -18,5 +18,6 @@ export const recipeReducer = createReducer(initialState, (builder) =>
     .addCase(actions.deleteRecipeAction, (state, action) =>
       state.filter((item) => item._id !== action.payload._id)
     )
+
     .addDefaultCase((state) => state)
 );

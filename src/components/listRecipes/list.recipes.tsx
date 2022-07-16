@@ -8,6 +8,7 @@ export function ListRecipes() {
 
   let template = (
     <>
+      <h2> Recetas Asiáticas </h2>
       <ul className="container-picture">
         {recipes
           .filter((recipe) => recipe.origin === 'Asian')
