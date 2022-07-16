@@ -41,7 +41,7 @@ function App() {
     { path: '/login', label: 'Pack', page: <LoginPage /> },
     { path: '/register', label: 'Unit', page: <RegisterPage /> },
     { path: '/receta', label: 'Recipe', page: <RecipePage /> },
-    { path: '/perfil', label: 'Perfil', page: <ProfilePage /> },
+    { path: '/profile', label: 'Perfil', page: <ProfilePage /> },
   ];
   return (
     <BrowserRouter>

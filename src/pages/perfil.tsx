@@ -5,8 +5,6 @@ import { FormUpdate } from '../components/form/form.update';
 import { PictureRecipe } from '../components/pictureRecipe/picture.recipe';
 
 export function ProfilePage() {
-  //  const location = useLocation();
-  //  const stateRecipe = location.state as { recipe: iRecipe };
   const storeUser = useSelector((store: iStore) => store.user);
 
   let template: JSX.Element;
@@ -16,7 +14,7 @@ export function ProfilePage() {
       <main className="page-content page-content--form">
         <FormUpdate></FormUpdate>
       </main>
-      {/* {storeUser && (
+      {storeUser && (
         <div className="">
           <h2> Mis Recetas Favoritas</h2>
           <ul>
@@ -30,7 +28,7 @@ export function ProfilePage() {
             ))}
           </ul>
         </div>
-      )} */}
+      )}
     </>
   );
   return template;

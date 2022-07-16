@@ -58,6 +58,19 @@ describe('Given the http.user', () => {
       expect(user.userName).toBe('test');
     });
   });
+  describe('When i use the method getUserBy token is called', () => {
+    test('Then should return a  user with token', async () => {
+      const user = { userName: 'test', password: '1234' };
+      const token = '1213414141';
+      global.fetch = jest.fn().mockResolvedValue({
+        json: jest.fn().mockResolvedValue(user),
+      });
+      await new HttpUser().getUserByToken(token);
+
+      expect(fetch).toBeCalled();
+      expect(user.userName).toBe('test');
+    });
+  });
 
   describe('When i use the method updateUser', () => {
     test('Then should be render', async () => {

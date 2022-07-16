@@ -1,12 +1,8 @@
 import { MemoryRouter, useLocation } from 'react-router-dom';
 import RecipePage from './recipe';
-import { recipeReducer } from '../reducer/recipes/recipes.reducer';
-import { usersReducer } from '../reducer/user/user.reducer';
-import { iRecipe, userWithToken } from '../interfaces/interfaces';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
 import { HttpUser } from '../services/http.user';
-import { debug } from 'console';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -35,18 +31,6 @@ jest.mock('react-redux', () => ({
   useDispatch: jest.fn(),
 }));
 
-// const reducer = {
-//   recipes: recipeReducer,
-//   user: usersReducer,
-// };
-// const preloadedState = {
-//   recipe: {
-//     title: 'p',
-//     img: 's',
-//   },
-
-//   user: {} as userWithToken,
-// };
 describe('Given the page Recipe page', () => {
   describe('When it is called and click button', () => {
     test('them rendered a "', () => {

@@ -10,7 +10,7 @@ export function Header() {
           </Link>
         </h3> */}
         <h3 className="header__container__pages">
-          <Link className="header__container__pages" to="/perfil">
+          <Link className="header__container__pages" to="/profile">
             Perfil
           </Link>
         </h3>

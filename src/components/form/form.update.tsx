@@ -3,7 +3,7 @@ import { SyntheticEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { HttpUser } from '../../services/http.user';
-import './form.update.css';
+import './form.css';
 export function FormUpdate() {
   let navigate = useNavigate();
   const [formData, setFormData] = useState({

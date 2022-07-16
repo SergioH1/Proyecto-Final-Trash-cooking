@@ -16,7 +16,6 @@ export function RecipePage() {
       .addToFavorites(stateRecipe.recipe._id as string)
       .then((resp) => {
         dispatch(updateUserAction(resp));
-        // console.log(item);
       });
   }
   let template = (
