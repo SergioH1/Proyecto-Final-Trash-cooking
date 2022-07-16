@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { iStore } from '../../app/store';
 import { iRecipe } from '../../interfaces/interfaces';
+import { PictureRecipe } from '../pictureRecipe/picture.recipe';
 
 export function UnicRecipe() {
   const recipes = useSelector((store: iStore) => store.recipes);
@@ -22,10 +23,10 @@ export function UnicRecipe() {
             </p>
           </div>
           <div className="container__grid--img">
-            <img
-              src={(featuredRecipe as iRecipe).img}
-              alt={(featuredRecipe as iRecipe).title}
-            />
+            <PictureRecipe
+              styles="img-recipe--featured"
+              recipe={featuredRecipe}
+            ></PictureRecipe>
           </div>
         </div>
       </>

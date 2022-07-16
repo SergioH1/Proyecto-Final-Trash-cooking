@@ -1,71 +1,81 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-import { render, screen } from '@testing-library/react';
-import { useSelector } from 'react-redux';
+import { render, screen } from '../utils/test.utils';
 import { MemoryRouter } from 'react-router-dom';
 import ProfilePage from './perfil';
+import { iRecipe } from '../interfaces/interfaces';
+import { recipeReducer } from '../reducer/recipes/recipes.reducer';
+import { usersReducer } from '../reducer/user/user.reducer';
 
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useLocation: () => ({
-    pathname: 'localhost:3000/example/path',
-    state: {
-      recipe: {
-        img: 's',
-        title: '3',
-        ingredients: [
-          {
-            ingredient: {
-              name: '',
-            },
-            ammout: 1,
-            meassure: '3',
-          },
-        ],
-      },
-    },
-  }),
-}));
-const mockAppState = {
-  user: {
-    recipes: [
-      {
-        img: 'ssasa',
-        title: '3',
-        ingredients: [
-          {
-            ingredient: {
-              name: '',
-            },
-            ammout: 1,
-            meassure: '3',
-          },
-        ],
-      },
-    ],
-  },
+// jest.mock('react-router-dom', () => ({
+//   ...jest.requireActual('react-router-dom'),
+//   useLocation: () => ({
+//     pathname: 'localhost:3000/example/path',
+//     state: {
+//       recipe: {
+//         img: 's',
+//         title: '3',
+//         ingredients: [
+//           {
+//             ingredient: {
+//               name: '',
+//             },
+//             ammout: 1,
+//             meassure: '3',
+//           },
+//         ],
+//       },
+//     },
+//   }),
+// }));
+
+const reducer = {
+  user: usersReducer,
+  recipes: recipeReducer,
 };
-jest.mock('react-redux', () => ({
-  ...jest.requireActual('react-redux'),
-  useDispatch: jest.fn(),
-  useSelector: jest.fn(),
-}));
-describe('Given the page Perfil page', () => {
-  (useSelector as jest.Mock).mockImplementation((callback: any) => {
-    return callback(mockAppState);
-  });
-});
-afterEach(() => {
-  (useSelector as jest.Mock).mockClear();
-});
-describe('When it is called', () => {
-  test('them rendered a "Favoritas', () => {
-    render(
-      <MemoryRouter>
-        <ProfilePage></ProfilePage>
-      </MemoryRouter>
-    );
 
-    const display = screen.getByText(/Cuenta/);
-    expect(display).toBeInTheDocument();
+const mockRecipes: Array<iRecipe> = [
+  {
+    title: 'Ramen',
+    img: '2',
+    content: '1',
+    origin: 'Asia',
+    keyword: ['ramen'],
+    ingredients: [],
+  },
+  {
+    title: 'Tonkatsu',
+    img: '2',
+    content: '1',
+    origin: 'Asia',
+    keyword: ['ramen'],
+    ingredients: [],
+  },
+];
+let preloadedState = {
+  user: {
+    userName: 'Pepe',
+    email: '2',
+    password: '123',
+
+    recipes: mockRecipes,
+  },
+  recipes: mockRecipes,
+};
+describe('Given the page Perfil page', () => {
+  describe('When it is called', () => {
+    test('them rendered a "Favoritas', () => {
+      render(
+        <MemoryRouter>
+          <ProfilePage></ProfilePage>
+        </MemoryRouter>,
+        {
+          reducer,
+          preloadedState,
+        }
+      );
+
+      const display = screen.getByText(/Cuenta/);
+      expect(display).toBeInTheDocument();
+    });
   });
 });
