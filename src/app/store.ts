@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { iRecipe, iUser, userWithToken } from '../interfaces/interfaces';
+import { iRecipe, iUser } from '../interfaces/interfaces';
 import { recipeReducer } from '../reducer/recipes/recipes.reducer';
 import { usersReducer } from '../reducer/user/user.reducer';
 export interface iStore {

@@ -10,9 +10,7 @@ export function PictureRecipe({
 }) {
   return (
     <Link to={'/receta'} state={{ recipe, styles }}>
-      <label>
-        <img className={styles} src={recipe.img} alt={recipe.title} />
-      </label>
+      <img className={styles} src={recipe.img} alt={recipe.title} />
     </Link>
   );
 }
