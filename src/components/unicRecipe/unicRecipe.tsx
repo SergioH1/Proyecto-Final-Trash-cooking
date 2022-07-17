@@ -15,19 +15,27 @@ export function UnicRecipe() {
       <>
         <div className="container__grid-recipe">
           <div className="container__grid--text">
-            <h2>Receta destacada</h2>
-            <h2>{(featuredRecipe as iRecipe).title}</h2>
-            <p>
-              Un buen cuenco de ramen alimenta cuerpo y alma, está cargado de
-              sabores y es reconfortante y nutritivo
+            <p className="featured">Receta destacada</p>
+            <h2 className="featured--img">
+              {(featuredRecipe as iRecipe).title}
+            </h2>
+            <p className="featured--text">
+              Resulta curioso pensar que el ramen apenas lleva más de un siglo
+              en Japón, siendo hoy uno de los platos más cotidianos y populares
+              de todo el país. Se prepara en las casas familiares, hay miles de
+              versiones instantáneas y es una comida habitual para el día a día,
+              sobre todo en los puestos callejeros. También hay restaurantes de
+              ramen famosos con recetas secretas y su presencia en la cultura
+              popular es constante. El ramen conquistó Japón y ahora el mundo
+              entero.
             </p>
           </div>
-          <div className="container__grid--img">
+          <picture className="container__grid--img">
             <PictureRecipe
               styles="img-recipe--featured"
               recipe={featuredRecipe}
             ></PictureRecipe>
-          </div>
+          </picture>
         </div>
       </>
     );

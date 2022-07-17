@@ -1,7 +1,8 @@
-.container-picure {
-  display: flex;
-  flex-direction: row;
-}
-.picture--img {
-  width: 15rem;
-}
+/* .container-picure {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: 150px;
+  padding: 10px;
+  padding-bottom: 4rem;
+  grid-gap: 20px;
+} */

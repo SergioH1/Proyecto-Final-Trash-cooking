@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Mojito';
+  src: url('../public/fonts/Mojito\ in\ June.ttf');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'bakery';
+  src: url('../public/fonts/bakery.ttf');
+  font-weight: normal;
+}
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@1,300&display=swap');
 html,
 body,
@@ -127,14 +137,14 @@ a {
   text-decoration: none;
 }
 * {
-  font-family: 'Albert Sans', sans-serif;
+  font-family: 'Mojito', sans-serif;
   letter-spacing: 1.2px !important;
   line-height: 1.3 !important;
 }
 
 p,
 p span {
-  font-family: 'Albert Sans', sans-serif;
+  font-family: 'Mojito', sans-serif;
   line-height: 1.3;
   font-size: 18px;
 }

@@ -80,3 +80,8 @@ figure.details--img.hover:after {
   transform: rotateX(0);
   opacity: 0.9;
 }
+.container-flex-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
