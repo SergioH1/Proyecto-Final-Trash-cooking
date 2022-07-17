@@ -1,6 +1,6 @@
 import { ListRecipes } from '../components/listRecipes/list.recipes';
 import { UnicRecipe } from '../components/unicRecipe/unicRecipe';
-
+import './home.css';
 export function HomePage() {
   let template = (
     <>

@@ -1,5 +1,6 @@
 .header__container {
   position: sticky;
+  z-index: 3;
   top: 0;
   display: flex;
   flex-direction: row;

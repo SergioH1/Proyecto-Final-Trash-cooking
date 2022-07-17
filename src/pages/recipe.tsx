@@ -5,7 +5,7 @@ import { iRecipe } from '../interfaces/interfaces';
 
 import { updateUserAction } from '../reducer/user/user.action.creators';
 import { HttpUser } from '../services/http.user';
-
+import './recipe.css';
 export function RecipePage() {
   const location = useLocation();
   const stateRecipe = location.state as { recipe: iRecipe };
@@ -23,7 +23,18 @@ export function RecipePage() {
       <div>
         <h3> Receta </h3>
         <h2> {stateRecipe.recipe.title}</h2>
-        <img src={stateRecipe.recipe.img} alt={stateRecipe.recipe.title} />
+        <figure className="details--img">
+          <img src={stateRecipe.recipe.img} alt={stateRecipe.recipe.title} />
+
+          <figcaption>
+            <h2>{stateRecipe.recipe.title}</h2>
+            <h4>
+              El ramen (ラーメン) es una sopa de fideos, de origen chino,
+              normalmente preparada con una base de caldo de carne, que se sirve
+              con una gran variedad de toppings
+            </h4>
+          </figcaption>
+        </figure>
 
         <button
           onClick={() => {
