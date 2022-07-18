@@ -85,3 +85,18 @@ figure.details--img.hover:after {
   flex-direction: column;
   align-items: center;
 }
+.container-grid--content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.recipe--ingredient {
+  grid-column: 2 / span 4;
+  padding: 60px 0 0;
+}
+.recipe--content {
+  grid-column: 6 / span 6;
+  padding: 40px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

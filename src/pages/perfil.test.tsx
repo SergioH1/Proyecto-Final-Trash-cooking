@@ -52,7 +52,7 @@ describe('Given the page Perfil page', () => {
         }
       );
 
-      const display = screen.getByText(/Cuenta/);
+      const display = screen.getByText(/Recetas/);
       expect(display).toBeInTheDocument();
     });
   });

@@ -89,7 +89,7 @@ describe('Given the page Perfil page', () => {
         }
       );
 
-      const display = screen.getByText(/Recetas Asiáticas/);
+      const display = screen.getByText(/hambre/);
       expect(display).toBeInTheDocument();
     });
   });

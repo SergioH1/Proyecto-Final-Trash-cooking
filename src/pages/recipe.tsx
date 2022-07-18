@@ -47,8 +47,8 @@ export function RecipePage() {
           </button>
         </div>
 
-        <div>
-          <div>
+        <div className="container-grid--content">
+          <div className="recipe--ingredient">
             <h4> Ingredientes </h4>
             <ul>
               {stateRecipe.recipe.ingredients.map((ingredient) => (
@@ -61,7 +61,7 @@ export function RecipePage() {
               ))}
             </ul>
           </div>
-          <div>
+          <div className="recipe--content">
             <h3> Pasos a seguir </h3>
             <p>{stateRecipe.recipe.content}</p>
           </div>
