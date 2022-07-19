@@ -48,9 +48,10 @@ export class HttpUser {
     }).then((resp) => resp.json());
   }
 
-  deleteUser(user: iUser): Promise<number> {
-    return fetch(this.url + `/${user._id}`, {
+  deleteUser(_id: string): Promise<number> {
+    return fetch(this.url + `/${_id}`, {
       method: 'DELETE',
+      headers: { Authorization: 'Bearer ' + getToken() },
     }).then((resp) => resp.status);
   }
 

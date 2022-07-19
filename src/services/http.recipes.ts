@@ -1,5 +1,13 @@
 import { iFood, iIngredient, iRecipe } from '../interfaces/interfaces';
 
+// function cleanQuery(query: [string]) {
+//   let queryString = 'search?q=' + query[0];
+//   for (let i = 1; i < query.length; i++) {
+//     queryString += `&q=${query[i]}`;
+//   }
+//   return queryString;
+// }
+
 export class HttpRecipe {
   url: string;
   constructor() {
@@ -12,6 +20,15 @@ export class HttpRecipe {
 
   getRecipe(id: iIngredient['id']): Promise<iRecipe> {
     return fetch(this.url + `/${id}`).then((resp) => resp.json());
+  }
+  getByingredient(query: [string]): Promise<Array<iRecipe>> {
+    let queryString = 'search?q=' + query[0];
+    for (let i = 1; i < query.length; i++) {
+      queryString += '&q=' + query[i];
+    }
+    return fetch('http://localhost:3700/' + queryString).then((resp) =>
+      resp.json()
+    );
   }
   updateIngredientRecipe = (
     id: iRecipe['_id'],

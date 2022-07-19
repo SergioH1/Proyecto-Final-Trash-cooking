@@ -5,6 +5,7 @@ export class User implements iUser {
     public userName: string,
     public email: string,
     public password: string,
-    public recipes: Array<iRecipe>
+    public recipes: Array<iRecipe>,
+    public _id: string
   ) {}
 }

@@ -13,7 +13,7 @@ const mockState: Array<iRecipe> = [
     img: '2',
     content: '1',
     origin: 'Asia',
-    keyword: ['ramen'],
+    keywords: ['ramen'],
     ingredients: [],
   },
   {
@@ -21,7 +21,7 @@ const mockState: Array<iRecipe> = [
     img: '2',
     content: '1',
     origin: 'Asia',
-    keyword: ['ramen'],
+    keywords: ['ramen'],
     ingredients: [],
   },
 ];

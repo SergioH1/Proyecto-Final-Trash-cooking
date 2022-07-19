@@ -16,7 +16,7 @@ const mockRecipes: Array<iRecipe> = [
     img: '2',
     content: '1',
     origin: 'Asian',
-    keyword: ['ramen'],
+    keywords: ['ramen'],
     ingredients: [
       {
         ingredient: {
@@ -34,7 +34,7 @@ const mockRecipes: Array<iRecipe> = [
     img: '2',
     content: '1',
     origin: 'Spain',
-    keyword: ['ramen'],
+    keywords: ['ramen'],
     ingredients: [
       {
         ingredient: {
@@ -52,7 +52,7 @@ const mockRecipes: Array<iRecipe> = [
     img: '2',
     content: '1',
     origin: 'Isdi',
-    keyword: ['ramen'],
+    keywords: ['ramen'],
     ingredients: [
       {
         ingredient: {

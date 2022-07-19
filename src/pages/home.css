@@ -26,8 +26,8 @@
 }
 
 .card-recipe {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   overflow: hidden;
 }
 .card-recipe img {
@@ -37,7 +37,7 @@
   background-color: beige;
 }
 .img-recipe--featured {
-  width: 50rem;
+  width: 40rem;
 }
 .container-picture {
   display: grid;
@@ -52,7 +52,7 @@
   align-items: center;
 }
 .card-recipe--title {
-  font-size: 2rem;
+  font-size: 1.4rem;
   text-justify: center;
 }
 .main-title {
