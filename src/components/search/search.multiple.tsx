@@ -13,12 +13,11 @@ interface iOptions extends SyntheticEvent {
 }
 export function SearchMultiple() {
   const recipes = useSelector((store: iStore) => store.recipes);
+
   let keywords = recipes.map((recipe) => recipe.keywords);
   let keywordsArray = keywords.flat();
-
   const filterKeywords = [...new Set(keywordsArray)];
-
-  const options: any = filterKeywords.map((item) => ({
+  const options: Array<Partial<iOptions>> = filterKeywords.map((item) => ({
     value: item,
     label: item,
   }));
@@ -37,7 +36,6 @@ export function SearchMultiple() {
   const handleChange: any = async (ev: [iOptions]) => {
     const query = ev.map((value) => value.value);
     setSearchData(query);
-    console.log(response);
   };
 
   let template = (

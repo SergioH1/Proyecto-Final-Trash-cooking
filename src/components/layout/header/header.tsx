@@ -4,23 +4,26 @@ export function Header() {
   let template = (
     <>
       <header className="header__container">
-        {/* <h3 className="header__container__pages">
-          <Link className="header__container__pages" to="/recetas">
-            Recetas
-          </Link>
-        </h3> */}
+        <div>
+          <hgroup className="title__container">
+            <Link to="/" className="title">
+              <h2 className="title">Trash-cooking</h2>{' '}
+            </Link>
+
+            <h3 className="subtitle">キッチン</h3>
+          </hgroup>
+        </div>
         <h3 className="header__container__pages">
-          <Link className="header__container__pages" to="/profile">
-            Perfil
+          <Link className="header__container__pages" to="/search">
+            ¿Qué tienes en la nevera?
           </Link>
         </h3>
-        <hgroup className="title__container">
-          <Link to="/" className="title">
-            <h2 className="title">Trash-cooking</h2>{' '}
+        <h3 className="header__container__pages">
+          <Link className="header__container__pages" to="/profile">
+            Mis recetas
           </Link>
+        </h3>
 
-          <h3 className="subtitle">キッチン</h3>
-        </hgroup>
         <h3 className="header__container__pages">
           <Link className="header__container__pages" to="/login">
             Login

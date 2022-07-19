@@ -57,8 +57,18 @@ describe('Given the services htttp.ingredients is instantiated', () => {
       });
 
       const response = await api.updateKeywordsRecipe('21', 'pollo');
-      // const expectedResponse = { ...mockRecipe, promotion: true };
       expect(response).toEqual(undefined);
+    });
+  });
+  describe('When the method getByIngredient is called', () => {
+    test('Them it should return a recipe with the data changes', async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        json: jest.fn().mockResolvedValue(mockIngredient),
+      });
+      const query = ['Pollo', 'alga'];
+      const response = api.getByingredient(query);
+      expect(fetch).toHaveBeenCalled();
+      // expect(response).toBe({});
     });
   });
 });

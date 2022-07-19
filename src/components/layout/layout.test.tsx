@@ -1,6 +1,14 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../utils/test.utils';
 import { MemoryRouter } from 'react-router';
 import { Layout } from './layout';
+import { usersReducer } from '../../reducer/user/user.reducer';
+
+const reducer = {
+  user: usersReducer,
+};
+const preloadedState = {
+  user: {},
+};
 describe('Given the component Layout', () => {
   describe('when it is called', () => {
     test('should have render its children', () => {
@@ -18,7 +26,11 @@ describe('Given the component Layout', () => {
           <Layout>
             <MockChildren></MockChildren>
           </Layout>
-        </MemoryRouter>
+        </MemoryRouter>,
+        {
+          preloadedState,
+          reducer,
+        }
       );
       const display = screen.getByText(/test/i);
       expect(display).toBeInTheDocument();
