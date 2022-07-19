@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
 
 import { iStore } from '../app/store';
-import { FormUpdate } from '../components/form/form.update';
+import { DeleteRecipesFav } from '../components/button/delete.recipes.fav';
+
 import { PictureRecipe } from '../components/pictureRecipe/picture.recipe';
 
 export function ProfilePage() {
@@ -11,7 +12,6 @@ export function ProfilePage() {
 
   template = (
     <>
-      <FormUpdate></FormUpdate>
       {storeUser && (
         <div className="main-container">
           <h2> Mis Recetas Favoritas</h2>
@@ -26,6 +26,7 @@ export function ProfilePage() {
                     ></PictureRecipe>
                   </div>
                   <h3 className="card-recipe--title"> {recipe.title}</h3>
+                  <DeleteRecipesFav id={recipe._id as string} />
                 </div>
               </li>
             ))}

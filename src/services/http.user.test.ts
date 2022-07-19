@@ -113,4 +113,18 @@ describe('Given the http.user', () => {
       expect(result).toBe(modifyUser);
     });
   });
+  describe('When i use the method deletefavorites', () => {
+    test('Then should be get token is called', async () => {
+      const user = new User('test', 'test', 'test@test.com', [], '1');
+      const modifyUser = { ...user, userName: 'pepe' };
+      global.fetch = jest.fn().mockResolvedValue({
+        json: jest.fn().mockResolvedValue(modifyUser),
+      });
+
+      const result = await new HttpUser().deleteFavorites('');
+
+      expect(fetch).toBeCalled();
+      expect(result).toBe(modifyUser);
+    });
+  });
 });

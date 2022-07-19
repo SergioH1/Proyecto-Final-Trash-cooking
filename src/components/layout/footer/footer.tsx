@@ -1,3 +1,4 @@
+import { DeleteAcount } from '../../button/delete.acount';
 import './footer.css';
 export function Footer() {
   let template = (
@@ -12,6 +13,7 @@ export function Footer() {
       <small className="privace-legacy">
         2022 Trash-cooking | Terms & Conditions | Privacy Policy
       </small>
+      <DeleteAcount></DeleteAcount>
     </footer>
   );
   return template;

@@ -61,4 +61,10 @@ export class HttpUser {
       headers: { Authorization: 'Bearer ' + getToken() },
     }).then((resp) => resp.json());
   }
+  deleteFavorites(id: string) {
+    return fetch(this.url + '/deleterecipes/' + id, {
+      method: 'PATCH',
+      headers: { Authorization: 'Bearer ' + getToken() },
+    }).then((resp) => resp.json());
+  }
 }
