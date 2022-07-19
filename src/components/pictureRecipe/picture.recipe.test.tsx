@@ -11,7 +11,7 @@ describe('Given the component PictureRecipe', () => {
         content: '',
         img: 'img',
         ingredients: [],
-        keyword: ['pollo'],
+        keywords: ['pollo'],
       };
       render(
         <MemoryRouter>

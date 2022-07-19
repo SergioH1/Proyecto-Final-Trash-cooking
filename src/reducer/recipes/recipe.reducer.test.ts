@@ -21,7 +21,7 @@ const mockedArray: Array<iRecipe> = [
         amount: 3,
       },
     ],
-    keyword: ['pollo', 'arroz'],
+    keywords: ['pollo', 'arroz'],
   },
   {
     _id: '2',
@@ -40,7 +40,7 @@ const mockedArray: Array<iRecipe> = [
         amount: 3,
       },
     ],
-    keyword: ['gambas', 'arroz'],
+    keywords: ['gambas', 'arroz'],
   },
 ];
 describe('Given recipes reducer', () => {

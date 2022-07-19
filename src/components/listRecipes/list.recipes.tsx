@@ -2,51 +2,56 @@ import { useSelector } from 'react-redux';
 import { iStore } from '../../app/store';
 import { PictureRecipe } from '../pictureRecipe/picture.recipe';
 
-import './list.recipes.css';
 export function ListRecipes() {
   const recipes = useSelector((store: iStore) => store.recipes);
 
   let template = (
     <>
-      <ul className="container-picture">
+      <h2 className="main-title"> ¿Tienes hambre?</h2>
+
+      <div className="container-picture">
         {recipes
           .filter((recipe) => recipe.origin === 'Asian')
           .map((recipe) => (
-            <li key={recipe.title}>
-              <PictureRecipe
-                styles="picture--img"
-                recipe={recipe}
-              ></PictureRecipe>
-              <p> {recipe.title}</p>
-            </li>
+            <div className="card-wrapper">
+              <div className="card-recipe">
+                <PictureRecipe
+                  styles="picture--img"
+                  recipe={recipe}
+                ></PictureRecipe>
+              </div>
+              <h3 className="card-recipe--title"> {recipe.title}</h3>
+            </div>
           ))}
-      </ul>
-      <ul className="container-picture">
+
         {recipes
           .filter((recipe) => recipe.origin === 'Spain')
           .map((recipe) => (
-            <li key={recipe.title}>
-              <PictureRecipe
-                styles="picture--img"
-                recipe={recipe}
-              ></PictureRecipe>
-              <p> {recipe.title}</p>
-            </li>
+            <div className="card-wrapper">
+              <div className="card-recipe">
+                <PictureRecipe
+                  styles="picture--img"
+                  recipe={recipe}
+                ></PictureRecipe>
+              </div>
+              <h3 className="card-recipe--title"> {recipe.title}</h3>
+            </div>
           ))}
-      </ul>
-      <ul className="container-picture">
+
         {recipes
           .filter((recipe) => recipe.origin === 'Isdi')
           .map((recipe) => (
-            <li key={recipe.title}>
-              <PictureRecipe
-                styles="picture--img"
-                recipe={recipe}
-              ></PictureRecipe>
-              <p> {recipe.title}</p>
-            </li>
+            <div className="card-wrapper">
+              <div className="card-recipe">
+                <PictureRecipe
+                  styles="picture--img"
+                  recipe={recipe}
+                ></PictureRecipe>
+              </div>
+              <h3 className="card-recipe--title"> {recipe.title}</h3>
+            </div>
           ))}
-      </ul>
+      </div>
     </>
   );
 

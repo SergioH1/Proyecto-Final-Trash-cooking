@@ -1,0 +1,68 @@
+.main-container {
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container__grid-recipe {
+  background: linear-gradient(
+    90deg,
+    rgba(252, 241, 196, 1) 77%,
+    rgba(255, 255, 255, 1) 80%
+  );
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+}
+.container__grid--text {
+  align-items: flex-start;
+  grid-column: 1 / span 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5%;
+}
+.container__grid--img {
+  grid-column: 7 / span 6;
+}
+
+.card-recipe {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+}
+.card-recipe img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: beige;
+}
+.img-recipe--featured {
+  width: 40rem;
+}
+.container-picture {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-self: center;
+  column-gap: 5rem;
+  row-gap: 3rem;
+}
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-recipe--title {
+  font-size: 1.4rem;
+  text-justify: center;
+}
+.main-title {
+  font-size: 3rem;
+  padding: 2rem;
+}
+.header-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 3.8rem;
+  padding-bottom: 2rem;
+}

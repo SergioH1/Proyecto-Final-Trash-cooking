@@ -47,6 +47,7 @@ describe('Given the page Recipe page', () => {
         .fn()
         .mockResolvedValue({ token: '9', user: { test: 'pepe' } });
       fireEvent.click(screen.getByRole('button'));
+
       let result = screen.getByText(/Receta/);
 
       expect(result).toBeInTheDocument();

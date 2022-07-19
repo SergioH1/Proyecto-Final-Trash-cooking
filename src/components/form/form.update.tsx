@@ -1,10 +1,13 @@
 import { SyntheticEvent, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { iStore } from '../../app/store';
 import { HttpUser } from '../../services/http.user';
 import './form.css';
 export function FormUpdate() {
+  const user = useSelector((store: iStore) => store.user);
   let navigate = useNavigate();
   const [formData, setFormData] = useState({
     id: '',
@@ -13,6 +16,13 @@ export function FormUpdate() {
     password: '',
     recipes: [],
   });
+
+  async function deleteUser(ev: SyntheticEvent) {
+    ev.preventDefault();
+    await new HttpUser().deleteUser(user._id as string);
+    localStorage.clear();
+    navigate('/');
+  }
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
     const response = await new HttpUser().updateUser(formData);
@@ -91,6 +101,13 @@ export function FormUpdate() {
         <button type="submit" className="btn btn1">
           Cambiar mi usuario
         </button>
+      </form>
+      <form onSubmit={deleteUser}>
+        <div className="form__item">
+          <button className="btn btn1 btn2" type="submit">
+            Eliminar cuenta
+          </button>
+        </div>
       </form>
     </>
   );

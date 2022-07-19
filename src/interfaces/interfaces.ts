@@ -7,7 +7,7 @@ export interface iRecipe {
   content: string;
   img: string;
   ingredients: Array<iFood>;
-  keyword: Array<string>;
+  keywords: Array<string>;
 }
 export interface iFood {
   ingredient: iIngredient;

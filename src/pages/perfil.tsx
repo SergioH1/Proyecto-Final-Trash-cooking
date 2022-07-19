@@ -11,19 +11,22 @@ export function ProfilePage() {
 
   template = (
     <>
-      <main className="page-content page-content--form">
-        <FormUpdate></FormUpdate>
-      </main>
+      <FormUpdate></FormUpdate>
       {storeUser && (
-        <div className="">
+        <div className="main-container">
           <h2> Mis Recetas Favoritas</h2>
-          <ul>
+          <ul className="container-picture">
             {storeUser.recipes?.map((recipe) => (
               <li key={recipe._id}>
-                <PictureRecipe
-                  styles="picture--img"
-                  recipe={recipe}
-                ></PictureRecipe>
+                <div className="card-wrapper">
+                  <div className="card-recipe">
+                    <PictureRecipe
+                      styles="picture--img"
+                      recipe={recipe}
+                    ></PictureRecipe>
+                  </div>
+                  <h3 className="card-recipe--title"> {recipe.title}</h3>
+                </div>
               </li>
             ))}
           </ul>
