@@ -6,7 +6,7 @@ import { SyntheticEvent, useEffect, useState } from 'react';
 import { iRecipe } from '../../interfaces/interfaces';
 import { HttpRecipe } from '../../services/http.recipes';
 import { PictureRecipe } from '../pictureRecipe/picture.recipe';
-import './search.css';
+
 interface iOptions extends SyntheticEvent {
   value: string;
   label: string;
@@ -40,29 +40,35 @@ export function SearchMultiple() {
 
   let template = (
     <>
-      <Select
-        isMulti={true}
-        isClearable={true}
-        name="search"
-        options={options}
-        onChange={handleChange}
-      />
-
-      {response
-        ? response.map((recipe) => {
-            return (
-              <div className="card-wrapper">
-                <div className="card-recipe">
-                  <PictureRecipe
-                    styles="picture--img"
-                    recipe={recipe}
-                  ></PictureRecipe>
-                </div>
-                <h3 className="card-recipe--title"> {recipe.title}</h3>
-              </div>
-            );
-          })
-        : ''}
+      <div className="">
+        <Select
+          isMulti={true}
+          isClearable={true}
+          name="search"
+          options={options}
+          onChange={handleChange}
+          className="select-search"
+        />
+      </div>
+      <div className="container-picture">
+        {response
+          ? response.map((recipe) => {
+              return (
+                <>
+                  <div className="card-wrapper">
+                    <div className="card-recipe">
+                      <PictureRecipe
+                        styles="picture--img"
+                        recipe={recipe}
+                      ></PictureRecipe>
+                    </div>
+                    <h3 className="card-recipe--title"> {recipe.title}</h3>
+                  </div>
+                </>
+              );
+            })
+          : ''}
+      </div>
     </>
   );
   return template;

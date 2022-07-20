@@ -29,11 +29,6 @@ export function Header() {
               ¿Qué tienes en la nevera?
             </Link>
           </h3>
-          <h3 className="header__container__pages">
-            <Link className="header__container__pages" to="/profile">
-              Mis recetas
-            </Link>
-          </h3>
 
           <h3 className="header__container__pages">
             <Link className="header__container__pages" to="/login">
