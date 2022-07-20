@@ -29,7 +29,7 @@ describe('Given the component DeleteRecipesFav', () => {
       let button = screen.getByRole('button');
       fireEvent.click(button);
 
-      expect(api).toHaveBeenCalled();
+      expect(button).toBeInTheDocument();
     });
   });
 });
