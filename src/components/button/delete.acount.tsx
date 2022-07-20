@@ -8,7 +8,6 @@ import { HttpUser } from '../../services/http.user';
 
 export function DeleteAcount() {
   const user = useSelector((store: iStore) => store.user);
-
   async function deleteUser(ev: SyntheticEvent) {
     Swal.fire({
       title: '¿Estás seguro de eliminar la cuenta?',

@@ -1,8 +1,8 @@
 import { MemoryRouter } from 'react-router-dom';
-import { SearchMultiple } from '../components/search/search.multiple';
+
 import { iRecipe } from '../interfaces/interfaces';
 import { recipeReducer } from '../reducer/recipes/recipes.reducer';
-import { HttpRecipe } from '../services/http.recipes';
+
 import { render, screen } from '../utils/test.utils';
 import SearchPage from './search';
 
