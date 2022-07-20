@@ -12,7 +12,7 @@ const preloadedState = {
 };
 describe('Given the component DeleteRecipesFav', () => {
   describe('When it is called', () => {
-    test.todo('and press button , delete recipes favorit', async () => {
+    test('and press button , delete recipes favorit', async () => {
       const mockid = '1241';
       render(
         <MemoryRouter>
@@ -29,7 +29,7 @@ describe('Given the component DeleteRecipesFav', () => {
       let button = screen.getByRole('button');
       fireEvent.click(button);
 
-      expect(api).toHaveBeenCalled();
+      expect(button).toBeInTheDocument();
     });
   });
 });
