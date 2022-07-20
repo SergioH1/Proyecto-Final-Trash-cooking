@@ -6,10 +6,9 @@ import { HttpUser } from '../../services/http.user';
 export function DeleteRecipesFav({ id }: { id: string }) {
   const dispatcher = useDispatch();
 
-  function handleclick() {
-    new HttpUser().deleteFavorites(id).then((data) => {
-      dispatcher(updateUserAction(data));
-    });
+  async function handleclick() {
+    const response = await new HttpUser().deleteFavorites(id);
+    dispatcher(updateUserAction(response));
   }
 
   let template = (
