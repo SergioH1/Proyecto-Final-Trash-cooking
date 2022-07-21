@@ -29,10 +29,7 @@
   flex-direction: column;
   align-items: center;
 }
-.form__title {
-  font-size: 1.3rem;
-  font-family: 'Signifier Regular', sans-serif;
-}
+
 .form__legend {
   font-size: 0.8rem;
 }

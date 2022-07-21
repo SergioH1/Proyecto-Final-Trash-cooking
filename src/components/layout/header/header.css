@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@1,300&family=Lato&display=swap');
 .header__container {
   position: sticky;
   z-index: 3;
@@ -5,10 +6,10 @@
   display: flex;
   flex-direction: row;
   text-align: center;
-  justify-content: space-around;
+  justify-content: space-between;
   max-width: 100%;
   height: 60px;
-  padding: 2rem;
+  padding: 3rem;
   background-color: #fcf1c4;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 2px -1px;
@@ -19,4 +20,17 @@
 }
 .title {
   color: black;
+  font-family: 'Mojito', sans-serif;
+  line-height: 1.3;
+  font-size: 2rem;
+}
+.subtitle {
+  font-size: 1.4rem;
+}
+.header__container__pages {
+  font-family: 'Lato', sans-serif;
+  margin-top: 0.8rem;
+}
+.logout {
+  cursor: pointer;
 }

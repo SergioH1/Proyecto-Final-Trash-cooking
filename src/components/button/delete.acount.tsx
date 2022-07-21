@@ -36,11 +36,9 @@ export function DeleteAcount() {
   }
   let template = (
     <>
-      <div className="form__item">
-        <button onClick={deleteUser} className="btn btn1 btn2" type="submit">
-          Eliminar cuenta
-        </button>
-      </div>
+      <p onClick={deleteUser} className="button-delete" role={'button'}>
+        Eliminar cuenta
+      </p>
     </>
   );
 

@@ -12,27 +12,29 @@ export function ProfilePage() {
 
   template = (
     <>
-      {storeUser && (
-        <div className="main-container">
-          <h2> Mis Recetas Favoritas</h2>
-          <ul className="container-picture">
-            {storeUser.recipes?.map((recipe) => (
-              <li key={recipe._id}>
-                <div className="card-wrapper">
-                  <div className="card-recipe">
-                    <PictureRecipe
-                      styles="picture--img"
-                      recipe={recipe}
-                    ></PictureRecipe>
+      <div className="page-content">
+        {storeUser && (
+          <div className="main-container">
+            <h2> Mis Recetas Favoritas</h2>
+            <ul className="container-picture">
+              {storeUser.recipes?.map((recipe) => (
+                <li key={recipe._id}>
+                  <div className="card-wrapper">
+                    <div className="card-recipe">
+                      <PictureRecipe
+                        styles="picture--poster"
+                        recipe={recipe}
+                      ></PictureRecipe>
+                    </div>
+                    <h3 className="card-recipe--title"> {recipe.title}</h3>
+                    <DeleteRecipesFav id={recipe._id as string} />
                   </div>
-                  <h3 className="card-recipe--title"> {recipe.title}</h3>
-                  <DeleteRecipesFav id={recipe._id as string} />
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </>
   );
   return template;

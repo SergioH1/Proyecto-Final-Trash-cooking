@@ -18,7 +18,7 @@ export function Header() {
           <div>
             <hgroup className="title__container">
               <Link to="/" className="title">
-                <h2 className="title">Trash-cooking</h2>{' '}
+                <h2 className="title">Trash-cooking</h2>
               </Link>
 
               <h3 className="subtitle">キッチン</h3>
