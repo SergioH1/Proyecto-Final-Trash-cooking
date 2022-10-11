@@ -1,8 +1,8 @@
-name: Proyecto-final
+name: Build
 on:
   push:
     branches:
-      - feature/router-and-layout
+      - main
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
