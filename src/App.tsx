@@ -23,12 +23,12 @@ function App() {
   useEffect(() => {
     apiRecipes.getAllRecipes().then((recipes) => {
       dispatcher(loadRecipesAction(recipes));
-    });
+    })
     const token = localStorage.getItem('token');
     if (token) {
       apiUser.getUserByToken(token).then((data) => {
         dispatcher(updateUserAction(data));
-      });
+      })
     }
   }, [apiRecipes, apiUser, dispatcher]);
   const HomePage = React.lazy(() => import('./pages/home'));

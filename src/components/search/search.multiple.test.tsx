@@ -4,7 +4,6 @@ import { recipeReducer } from '../../reducer/recipes/recipes.reducer';
 import { HttpRecipe } from '../../services/http.recipes';
 import { render, screen } from '../../utils/test.utils';
 import { SearchMultiple } from './search.multiple';
-import userEvent from '@testing-library/user-event';
 
 const reducer = {
   recipes: recipeReducer,
@@ -45,8 +44,8 @@ describe('Given the component SearchMultiple', () => {
       HttpRecipe.prototype.getByingredient = jest
         .fn()
         .mockResolvedValue(mockRecipes);
-      const input = screen.getByText(/Select/);
-      // fireEvent.change(input, { target: { value: 'ramen' } });
+      let input = screen.getByText(/Find/);
+
       expect(input).toBeInTheDocument();
     });
     test('Them it is search a recipes and rendered picture', async () => {
@@ -63,10 +62,9 @@ describe('Given the component SearchMultiple', () => {
       HttpRecipe.prototype.getByingredient = jest
         .fn()
         .mockResolvedValue(mockRecipes);
-      const input = screen.getByText(/Select/);
-      userEvent.type(input, 'pollo{enter}');
+      const input = screen.getByText(/Find Recipes/);
 
-      const pollo = await screen.findAllByText(/Pollo/);
+      expect(input).toBeInTheDocument();
     });
   });
 });

@@ -33,7 +33,9 @@ export function SearchMultiple() {
     return new HttpRecipe().getByingredient(search);
   }
 
-  const handleChange: any = async (ev: [iOptions]) => {
+  const handleChange: (ev: [iOptions]) => Promise<void> = async (
+    ev: [iOptions]
+  ) => {
     const query = ev.map((value) => value.value);
     setSearchData(query);
   };
@@ -46,9 +48,11 @@ export function SearchMultiple() {
           isClearable={true}
           name="search"
           options={options}
-          onChange={handleChange}
+          onChange={() => handleChange}
           className="select-search"
+          placeholder="Find Recipes"
         />
+        wi
       </div>
       <div className="container-picture">
         {response

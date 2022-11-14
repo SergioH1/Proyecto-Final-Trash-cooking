@@ -11,7 +11,7 @@ const initialState: iUser = {
 
 export const usersReducer = createReducer(initialState, (builder) => {
   return builder
-    .addCase(loadUserAction, (state, action) => action.payload)
+    .addCase(loadUserAction, (_state, action) => action.payload)
     .addCase(updateUserAction, (state, action) => ({
       ...state,
       ...action.payload,

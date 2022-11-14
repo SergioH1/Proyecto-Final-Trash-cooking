@@ -5,7 +5,7 @@ import * as actions from './recipe.action.creators';
 const initialState = [] as Array<iRecipe>;
 export const recipeReducer = createReducer(initialState, (builder) =>
   builder
-    .addCase(actions.loadRecipesAction, (state, action) => [...action.payload])
+    .addCase(actions.loadRecipesAction, (_state, action) => [...action.payload])
     .addCase(actions.addRecipeAction, (state, action) => [
       ...state,
       action.payload,
