@@ -1,40 +1,40 @@
 .footer__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 100%;
-  min-height: 150px;
-  padding: 2rem;
-  background-color: #fbb348;
-  color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    min-height: 150px;
+    padding: 2rem;
+    background-color: #fbb348;
+    color: rgb(0, 0, 0);
 }
 .button-delete {
-  width: 10rem;
-  font-size: 10px;
-  font-family: 'Lato', sans-serif;
+    width: 10rem;
+    font-size: 10px;
+    font-family: 'Lato', sans-serif;
 }
 .quotes {
-  grid-column: 3 / span 8;
-  grid-row: 2;
-  font-size: 18px;
-  font-family: 'Lato', sans-serif;
+    grid-column: 3 / span 8;
+    grid-row: 2;
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
 }
 .connect {
-  margin-top: 1rem;
-  grid-column: 7 / span 2;
-  font-family: 'Lato', sans-serif;
+    margin-top: 1rem;
+    grid-column: 7 / span 2;
+    font-family: 'Lato', sans-serif;
 }
 .icons {
-  cursor: pointer;
-  width: 1.6rem;
-  padding: 5px;
-  margin-bottom: 1rem;
+    cursor: pointer;
+    width: 1.6rem;
+    padding: 5px;
+    margin-bottom: 1rem;
 }
 .button-delete {
-  margin-top: 1rem;
-  cursor: pointer;
-  margin-left: 3.6rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    margin-left: 3.6rem;
 }
 .button-delete:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }

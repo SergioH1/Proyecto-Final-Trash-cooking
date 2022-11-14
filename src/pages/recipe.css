@@ -1,102 +1,102 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
 figure.details--img {
-  font-family: 'Raleway', Arial, sans-serif;
-  position: relative;
-  overflow: hidden;
-  margin: 10px;
-  min-width: 230px;
-  max-width: 800px;
-  width: 100%;
-  color: #000000;
-  text-align: center;
-  -webkit-perspective: 50em;
-  perspective: 50em;
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 230px;
+    max-width: 800px;
+    width: 100%;
+    color: #000000;
+    text-align: center;
+    -webkit-perspective: 50em;
+    perspective: 50em;
 }
 figure.details--img * {
-  -webkit-box-sizing: padding-box;
-  box-sizing: padding-box;
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+    -webkit-box-sizing: padding-box;
+    box-sizing: padding-box;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 figure.details--img img {
-  max-width: 100%;
-  vertical-align: top;
+    max-width: 100%;
+    vertical-align: top;
 }
 figure.details--img figcaption {
-  top: 50%;
-  left: 20px;
-  right: 20px;
-  position: absolute;
-  opacity: 0;
-  z-index: 1;
+    top: 50%;
+    left: 20px;
+    right: 20px;
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
 }
 figure.details--img h2,
 figure.details--img h4 {
-  margin: 0;
+    margin: 0;
 }
 figure.details--img h2 {
-  font-weight: 600;
+    font-weight: 600;
 }
 figure.details--img h4 {
-  font-weight: 200;
+    font-weight: 200;
 }
 
 figure.details--img:after {
-  background-color: #ffffffbe;
-  position: absolute;
-  content: '';
-  top: 20px;
-  left: 40px;
-  right: 40px;
-  bottom: 20px;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-  -webkit-transform: rotateX(-90deg);
-  transform: rotateX(-90deg);
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  opacity: 0;
+    background-color: #ffffffbe;
+    position: absolute;
+    content: '';
+    top: 20px;
+    left: 40px;
+    right: 40px;
+    bottom: 20px;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    opacity: 0;
 }
 figure.details--img a {
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  position: absolute;
-  z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
 }
 figure.details--img:hover figcaption,
 figure.details--img.hover figcaption {
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  opacity: 1;
-  -webkit-transition-delay: 0.2s;
-  transition-delay: 0.2s;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: 1;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
 }
 figure.details--img:hover:after,
 figure.details--img.hover:after {
-  -webkit-transform: rotateX(0);
-  transform: rotateX(0);
-  opacity: 0.9;
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+    opacity: 0.9;
 }
 .container-flex-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .container-grid--content {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
 }
 .recipe--ingredient {
-  grid-column: 2 / span 4;
-  padding: 60px 0 0;
+    grid-column: 2 / span 4;
+    padding: 60px 0 0;
 }
 .recipe--content {
-  grid-column: 6 / span 6;
-  padding: 40px 0 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    grid-column: 6 / span 6;
+    padding: 40px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

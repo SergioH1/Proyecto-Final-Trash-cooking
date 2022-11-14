@@ -3,14 +3,14 @@ import { iRecipe } from '../../interfaces/interfaces';
 import { actionTypesRecipes } from './recipe.action.types';
 
 export const loadRecipesAction = createAction<Array<iRecipe>>(
-  actionTypesRecipes['recipe@load']
+    actionTypesRecipes['recipe@load']
 );
 export const addRecipeAction = createAction<iRecipe>(
-  actionTypesRecipes['recipe@add']
+    actionTypesRecipes['recipe@add']
 );
 export const updateRecipeAction = createAction<iRecipe>(
-  actionTypesRecipes['recipe@update']
+    actionTypesRecipes['recipe@update']
 );
 export const deleteRecipeAction = createAction<iRecipe>(
-  actionTypesRecipes['recipe@delete']
+    actionTypesRecipes['recipe@delete']
 );

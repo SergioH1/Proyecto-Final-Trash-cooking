@@ -6,65 +6,65 @@ import { render, screen } from '../../utils/test.utils';
 import { SearchMultiple } from './search.multiple';
 
 const reducer = {
-  recipes: recipeReducer,
+    recipes: recipeReducer,
 };
 const mockRecipes: Array<iRecipe> = [
-  {
-    title: 'Ramen',
-    img: '2',
-    content: '1',
-    origin: 'Asia',
-    keywords: ['Pollo'],
-    ingredients: [],
-  },
-  {
-    title: 'Tonkatsu',
-    img: '2',
-    content: '1',
-    origin: 'Asia',
-    keywords: ['ramen'],
-    ingredients: [],
-  },
+    {
+        title: 'Ramen',
+        img: '2',
+        content: '1',
+        origin: 'Asia',
+        keywords: ['Pollo'],
+        ingredients: [],
+    },
+    {
+        title: 'Tonkatsu',
+        img: '2',
+        content: '1',
+        origin: 'Asia',
+        keywords: ['ramen'],
+        ingredients: [],
+    },
 ];
 let preloadedState = {
-  recipes: mockRecipes,
+    recipes: mockRecipes,
 };
 describe('Given the component SearchMultiple', () => {
-  describe('When it is called', () => {
-    test('Them it is search a recipes', () => {
-      render(
-        <MemoryRouter>
-          <SearchMultiple></SearchMultiple>
-        </MemoryRouter>,
-        {
-          reducer,
-          preloadedState,
-        }
-      );
-      HttpRecipe.prototype.getByingredient = jest
-        .fn()
-        .mockResolvedValue(mockRecipes);
-      let input = screen.getByText(/Find/);
+    describe('When it is called', () => {
+        test('Them it is search a recipes', () => {
+            render(
+                <MemoryRouter>
+                    <SearchMultiple></SearchMultiple>
+                </MemoryRouter>,
+                {
+                    reducer,
+                    preloadedState,
+                }
+            );
+            HttpRecipe.prototype.getByingredient = jest
+                .fn()
+                .mockResolvedValue(mockRecipes);
+            let input = screen.getByText(/Find/);
 
-      expect(input).toBeInTheDocument();
+            expect(input).toBeInTheDocument();
+        });
+        test('Them it is search a recipes and rendered picture', async () => {
+            render(
+                <MemoryRouter>
+                    <SearchMultiple></SearchMultiple>
+                </MemoryRouter>,
+                {
+                    reducer,
+                    preloadedState,
+                }
+            );
+
+            HttpRecipe.prototype.getByingredient = jest
+                .fn()
+                .mockResolvedValue(mockRecipes);
+            const input = screen.getByText(/Find Recipes/);
+
+            expect(input).toBeInTheDocument();
+        });
     });
-    test('Them it is search a recipes and rendered picture', async () => {
-      render(
-        <MemoryRouter>
-          <SearchMultiple></SearchMultiple>
-        </MemoryRouter>,
-        {
-          reducer,
-          preloadedState,
-        }
-      );
-
-      HttpRecipe.prototype.getByingredient = jest
-        .fn()
-        .mockResolvedValue(mockRecipes);
-      const input = screen.getByText(/Find Recipes/);
-
-      expect(input).toBeInTheDocument();
-    });
-  });
 });
