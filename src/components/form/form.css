@@ -6,10 +6,7 @@
   min-height: calc(100vh - 120px);
   align-items: center;
   margin: 35px auto;
-  margin-top: 35px;
-  margin-right: auto;
-  margin-bottom: 35px;
-  margin-left: auto;
+
   text-align: center;
 }
 
@@ -89,3 +86,4 @@
 .form__hint--text2:hover {
   color: #2b2b2b;
 }
+

@@ -94,7 +94,7 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font-size: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -161,3 +161,4 @@ p span {
   box-shadow: 0 3px 2px alpha(black, 0.2);
   filter: saturate(80%) contrast(85%);
 }
+
