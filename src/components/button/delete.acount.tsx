@@ -1,5 +1,6 @@
 import { SyntheticEvent } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import Swal from 'sweetalert2';
 
@@ -7,6 +8,7 @@ import { iStore } from '../../app/store';
 import { HttpUser } from '../../services/http.user';
 
 export function DeleteAcount() {
+    let navigate = useNavigate();
     const user = useSelector((store: iStore) => store.user);
     async function deleteUser(ev: SyntheticEvent) {
         Swal.fire({
@@ -27,7 +29,7 @@ export function DeleteAcount() {
                 ev.preventDefault();
                 await new HttpUser().deleteUser(user._id as string);
                 localStorage.clear();
-                window.location.href = 'http://localhost:3000';
+                navigate('/home');
             } else {
                 Swal.fire('Usuario no borrado');
                 return;

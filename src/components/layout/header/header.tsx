@@ -1,14 +1,14 @@
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { iStore } from '../../../app/store';
 import './header.css';
 export function Header() {
     const user = useSelector((store: iStore) => store.user);
     let template;
-
+    let navigate = useNavigate();
     function handleSubmit() {
         localStorage.clear();
-        window.location.href = 'http://localhost:3000';
+        navigate('/home');
     }
 
     if (!user.userName) {
