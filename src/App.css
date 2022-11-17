@@ -1,12 +1,12 @@
 @font-face {
-  font-family: 'Mojito';
-  src: url('../public/fonts/Mojito\ in\ June.ttf');
-  font-weight: normal;
+    font-family: 'Mojito';
+    src: url('../public/fonts/Mojito\ in\ June.ttf');
+    font-weight: normal;
 }
 @font-face {
-  font-family: 'bakery';
-  src: url('../public/fonts/bakery.ttf');
-  font-weight: normal;
+    font-family: 'bakery';
+    src: url('../public/fonts/bakery.ttf');
+    font-weight: normal;
 }
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@1,300&display=swap');
 html,
@@ -90,12 +90,12 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font-size: inherit;
-  vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-size: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -109,56 +109,55 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+    display: block;
 }
 body {
-  line-height: 1;
+    line-height: 1;
 }
 ol,
 ul {
-  list-style: none;
+    list-style: none;
 }
 blockquote,
 q {
-  quotes: none;
+    quotes: none;
 }
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
-  content: none;
+    content: '';
+    content: none;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 * {
-  font-family: 'Mojito', sans-serif;
-  letter-spacing: 1.2px;
-  line-height: 1.3;
+    font-family: 'Mojito', sans-serif;
+    letter-spacing: 1.2px;
+    line-height: 1.3;
 }
 
 p,
 p span {
-  font-family: 'Mojito', sans-serif;
-  line-height: 1.3;
-  font-size: 18px;
+    font-family: 'Mojito', sans-serif;
+    line-height: 1.3;
+    font-size: 18px;
 }
 .swal2-styled.swal2-confirm {
-  background-color: brown !important;
-  border-left-color: #444444 !important;
-  border-right-color: #444444 !important;
+    background-color: brown !important;
+    border-left-color: #444444 !important;
+    border-right-color: #444444 !important;
 }
 .picture--img {
-  padding: 7%;
-  position: relative;
-  box-sizing: border-box;
-  background-color: rgb(189, 189, 189);
-  box-shadow: 0 3px 2px alpha(black, 0.2);
-  filter: saturate(80%) contrast(85%);
+    padding: 7%;
+    position: relative;
+    box-sizing: border-box;
+    background-color: rgb(189, 189, 189);
+    box-shadow: 0 3px 2px alpha(black, 0.2);
+    filter: saturate(80%) contrast(85%);
 }
-
