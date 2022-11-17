@@ -4,13 +4,13 @@ import { getToken } from '../utils/getToken';
 export class HttpUser {
     url: string;
     constructor() {
-        this.url = 'http://localhost:3700/user';
+        this.url = 'https://trash-cooking-backend.onrender.com/user';
     }
     getAllUsers(): Promise<iUser[]> {
         return fetch(this.url).then((resp) => resp.json());
     }
     getUserByToken(token: string): Promise<iUser> {
-        return fetch('http://localhost:3700/user/token', {
+        return fetch('https://trash-cooking-backend.onrender.com/user/token', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

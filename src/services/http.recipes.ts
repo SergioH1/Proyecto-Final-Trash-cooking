@@ -3,7 +3,7 @@ import { iFood, iIngredient, iRecipe } from '../interfaces/interfaces';
 export class HttpRecipe {
     url: string;
     constructor() {
-        this.url = 'http://localhost:3700/recipe';
+        this.url = 'https://trash-cooking-backend.onrender.com/recipe';
     }
 
     getAllRecipes(): Promise<Array<iRecipe>> {
@@ -18,9 +18,9 @@ export class HttpRecipe {
         for (let i = 1; i < query.length; i++) {
             queryString += '&q=' + query[i];
         }
-        return fetch('http://localhost:3700/' + queryString).then((resp) =>
-            resp.json()
-        );
+        return fetch(
+            'https://trash-cooking-backend.onrender.com/' + queryString
+        ).then((resp) => resp.json());
     }
     updateIngredientRecipe = (
         id: iRecipe['_id'],

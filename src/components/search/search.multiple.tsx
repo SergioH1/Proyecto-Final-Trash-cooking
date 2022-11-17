@@ -33,9 +33,7 @@ export function SearchMultiple() {
         return new HttpRecipe().getByingredient(search);
     }
 
-    const handleChange: (ev: [iOptions]) => Promise<void> = async (
-        ev: [iOptions]
-    ) => {
+    const handleChange: any = async (ev: [iOptions]) => {
         const query = ev.map((value) => value.value);
         setSearchData(query);
     };
@@ -48,32 +46,30 @@ export function SearchMultiple() {
                     isClearable={true}
                     name="search"
                     options={options}
-                    onChange={() => handleChange}
+                    onChange={handleChange}
                     className="select-search"
-                    placeholder="Find Recipes"
                 />
-                wi
             </div>
             <div className="container-picture">
                 {response
                     ? response.map((recipe) => {
-                        return (
-                            <>
-                                <div className="card-wrapper">
-                                    <div className="card-recipe">
-                                        <PictureRecipe
-                                            styles="picture--img"
-                                            recipe={recipe}
-                                        ></PictureRecipe>
-                                    </div>
-                                    <h3 className="card-recipe--title">
-                                        {' '}
-                                        {recipe.title}
-                                    </h3>
-                                </div>
-                            </>
-                        );
-                    })
+                          return (
+                              <>
+                                  <div className="card-wrapper">
+                                      <div className="card-recipe">
+                                          <PictureRecipe
+                                              styles="picture--img"
+                                              recipe={recipe}
+                                          ></PictureRecipe>
+                                      </div>
+                                      <h3 className="card-recipe--title">
+                                          {' '}
+                                          {recipe.title}
+                                      </h3>
+                                  </div>
+                              </>
+                          );
+                      })
                     : ''}
             </div>
         </>

@@ -3,7 +3,7 @@ import { iIngredient } from '../interfaces/interfaces';
 export class HttpIngredient {
     url: string;
     constructor() {
-        this.url = 'http://localhost:3700/ingredient';
+        this.url = 'https://trash-cooking-backend.onrender.com/ingredient';
     }
 
     getAllIngredients(): Promise<iIngredient[]> {
